@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0068)http://www.17sucai.com/preview/1/2017-03-27/jQueryAnimate/index.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script type="text/javascript" src="./jQuery卷轴效果_files/jquery.min.js"></script>
+<title>jQuery卷轴效果</title>
+<style type="text/css">
+ /*通用样式*/
+body,ul,li,p,h1,h2,h3,h4,h5{
+    margin:0;
+    padding:0;
+    font-size:100%;
+}
+body{
+    font-family: 'Microsoft YaHei UI', 'Microsoft YaHei', SimSun, 'Segoe UI', Tahoma, Helvetica, Sans-Serif;
+    font-size: 14px;
+    background: #6f0b02;
+}
+button,input,select,textarea{
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration:none;
+    color:#000;
+    background: transparent;
+}
+a:focus{
+    outline: none;
+}
+img{
+    border:0;
+}
+
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.center{
+    width: 1000px;
+    margin: 0 auto 0;
+}
+/*content*/
+.content{
+    position: relative;
+    margin: 40px 0 0 -21px;
+    width: 900px;
+    height: 460px;
+}
+.l-pic-index{
+	/*display:none;*/
+    position: absolute;
+    left: 400px;
+    top: 1px;
+    z-index:2;
+    width:50px;
+    height:460px;
+    background: url("jQuery卷轴效果_files/images/j1.png") no-repeat right 0;
+}
+.r-pic-index{
+	/*display:none;*/
+    position: absolute;
+    right: 400px;
+    top: 0;
+    z-index: 2;
+    width:50px;
+    *width:82px;
+    height:460px;
+    background: url("jQuery卷轴效果_files/images/j4.png") no-repeat left 0;
+}
+.l-bg-index{
+    position: absolute;
+    top: -3px;
+    left: 430px;
+    z-index: 1;
+    width: 25px;
+    height: 459px;
+    background: url("jQuery卷轴效果_files/images/j2.png") right 0 no-repeat;
+}
+.r-bg-index{
+    position: absolute;
+    top:-4px;
+    right: 430px;
+    z-index: 1;
+    width: 25px;
+    height: 459px;
+    background: url("jQuery卷轴效果_files/images/j3.png") 0 0 no-repeat;
+}
+.main-index{
+    display: none;
+    overflow: hidden;
+    zoom:1;
+    position: absolute;
+    z-index: 5;
+    width:530px;
+    height:280px;
+    left:145px;
+    top:90px;
+    color: #2e2e2e;
+}
+.intro-text{
+    margin: 10px 0 0 44px;
+    line-height: 1.8;
+    text-indent: 30px;
+}
+ </style>
+ 
+</head>
+<body>
+
+<div class="content">
+	<div class="l-pic-index" style="left: 95px; top: -4px;"></div>
+	<div class="r-pic-index" style="right: -23px; top: -5px;"></div>
+	<div class="l-bg-index" style="width: 433px; left: 73px;"></div>
+	<div class="r-bg-index" style="width: 433px; right: -38px;"></div>
+	<div class="main-index" style="display: block;">
+		<!-- <h1 class="title"><img src="./img/intro-title.png" alt=""></h1> -->
+		<p class="intro-text">
+			传统音乐是在以典河流域为中心的中原音乐和四域音乐以及外国音乐的交流融合之中形成发展起来的。
+		</p>
+	</div>
+</div>
+
+<script type="text/javascript">
+ $(document).ready(function(){
+        //卷轴展开效果
+        $(".l-pic-index").animate({'left':'95px','top':'-4px'},1300);
+        $(".r-pic-index").animate({'right':'-23px','top':'-5px'},1450);
+        $(".l-bg-index").animate({'width':'433px','left':'73px'},1500);
+        $(".r-bg-index").animate({'width':'433px','right':'-38px'},1500,function(){
+            $(".main-index").fadeIn(800);
+        });
+    });
+</script>
+
+
+</body></html>

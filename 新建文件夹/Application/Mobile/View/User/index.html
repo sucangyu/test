@@ -1,0 +1,96 @@
+<!DOCTYPE html >
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>个人中心</title>
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/mobile_css/index.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/mobile_css/public.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/bootstrap-3.3.7/css/bootstrap.css"/>
+<script src="__PUBLIC__/mobile_js/jquery.js"></script>
+<script src="__PUBLIC__/mobile_js/jquery.json.js"></script>
+<script src="__PUBLIC__/mobile_js/layer.js"></script>
+<script src="__PUBLIC__/mobile_js/TouchSlide.1.1.js"></script>
+<script src="__PUBLIC__/mobile_js/touchslider.dev.js"></script>
+<script src="__PUBLIC__/bootstrap-3.3.7/js/bootstrap.js"></script>
+<style type="text/css">
+.ontitle{width: 100%;background-color:#7d191d; height: 120px;display: flex;align-items: center;}
+.ontitle img{width: 20%;margin-left: 20px;float: left;}
+.ontitle ul{float: left;margin-left: 15px;line-height: 20px;font-size: 20px;color: #ffffff;}
+.enterprisesign{width: 92%;background-color: #ffffff;margin:0 auto;height:100px;display: flex;align-items: center; }
+/*进度条css*/
+#progressBar{width: 83%;height: 34px;position: relative;left:40px;/*margin: 50px 0 0 100px;*/}
+#progressBar div{width: 100%;height: 2px;position: absolute;top:50%;left: 0;margin-top:-17px;/*border:1px solid #ddd;*/background: #ccc;}
+#progressBar div span{position: absolute;display: inline-block;background: #e99315;height: 2px;width: 75%;}
+#progressBar>span{position: absolute;top:0;margin-top: -10px;width: 20px;height: 20px;/*border:2px solid #ddd;*/border-radius: 50%;background: #e99315;margin-left: -20px;color:#fff;}
+#progressBar>span:nth-child(1){left: 0%;}
+#progressBar>span:nth-child(2){left: 25%;background:#e99315;}
+#progressBar>span:nth-child(3){left: 50%;background:#e99315;}
+#progressBar>span:nth-child(4){left: 75%;background:#7d181d;}
+#progressBar>span:nth-child(5){left: 100%;background:#ccc;}
+.progresstext{position: absolute;width: 100%;height: 34px;margin-top: 20px;font-size: 12px;margin-left: -10px}
+.progresstext span{width: 18%;}
+.contentlist{width: 100%;background-color: #ffffff;}
+.contentlist ul a li{width: 100%;height: 50px;border-bottom: 1px solid #b5b4b5;line-height: 50px;color: #989290;}
+.contentlist ul a li .spanname{margin-left: 25px; font-size: 16px;}
+.contentlist ul a li .glyphicon{float: right;margin-right: 25px;font-size: 20px;line-height: 50px;color: #b5b4b5}
+.foot{bottom: 0px;height: 50px;width: 100%;border-top:1px solid #b5b4b5;text-align: center;line-height: 50px;font-size: 24px;color: #b5b4b5;background-color: #ffffff;position: fixed;}
+.foot .col-md-6{font-size: 22px;color: #b5b4b5;width: 49%;text-align: center;}
+</style>
+</head>
+<body >
+
+<div class="ontitle">
+	<img src="__PUBLIC__/images/v-shop/logo.png" alt="..." class="img-circle">
+	<ul>
+		<li>吴晓</li>
+		<li style="font-size: 14px;">事业编好:502467</li>
+	</ul>
+</div>
+<if condition="($name eq 1)">
+<div style="background-color:#eaebec;padding: 15px 0 15px 0;">
+	<div class="enterprisesign">
+		<div id="progressBar">
+		     <!-- 进度条 -->
+		     <div>
+		         <span></span>
+		     </div>
+		     <!-- 五个圆 -->
+		     <span></span>
+		     <span></span>
+		     <span></span>
+		     <span></span>
+		     <span></span>
+		</div>
+		<div class="progresstext">
+			<span class="col-md-1">提交资料</span>
+		    <span class="col-md-1">审核</span>
+		    <span class="col-md-1"> 报名成功</span>
+		    <span class="col-md-1">录入信息</span>
+		    <span class="col-md-1">开始售卖</span>			
+		</div>
+	</div>
+</div>
+</if>
+<div class="contentlist">
+	<ul>
+		<a href="{:U('User/orderlist')}"><li><span class="spanname">我的订单</span><span class="glyphicon glyphicon-menu-right"></span></li></a>
+		<a href="{:U('User/collection')}"><li><span class="spanname">我的收藏</span><span class="glyphicon glyphicon-menu-right"></span></li></a>
+		<a href="{:U('User/evaluation')}"><li><span class="spanname">我的评价</span><span class="glyphicon glyphicon-menu-right"></span></li></a>
+		<a href="{:U('User/personal')}"><li><span class="spanname">个人资料</span><span class="glyphicon glyphicon-menu-right"></span></li></a>
+		<a href="{:U('User/manaddress')}"><li><span class="spanname">管理地址</span><span class="glyphicon glyphicon-menu-right"></span></li></a>
+		<if condition="($name eq 1)">
+			<a href="{:U('Seller/index')}"><li><span class="spanname">我的品牌</span><span class="glyphicon glyphicon-menu-right"></span></li></a>
+		</if>
+	</ul>
+</div>
+<div style="width: 100%;height: 56px;"></div>
+<div class="foot">
+	<a href="" class="col-md-6">大赛首页</a>
+	<span>|</span>
+	<a href="" class="col-md-6">个人中心</a>
+</div>
+</body>
+</html> 

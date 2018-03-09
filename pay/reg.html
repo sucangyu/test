@@ -1,0 +1,276 @@
+<include file="Public/header" />
+<div id="wrapper" class="bg24 pb20 bx">
+    <header class="header">
+        <h1>自助购买</h1>
+    </header>
+    <div class="mainbox">
+        <form name="form1" method="post" action="{:U('Index/reg')}" id="form1" onsubmit="return checkUserUpdate();" >
+            <div class="regbox bx">
+                <div class="rb-title bx">
+                    <h1>选择产品</h1>
+                </div>
+                <div class="rb-content">
+                    <select name="gid" class="rbc-name" style="width: 100%">
+                        <volist name="goodsArr" id="vo">
+                            <option value="{$vo['id']}">{$vo['gtitle']}</option>
+                        </volist>
+                    </select>
+                </div>
+
+            </div>
+            <div class="regbox bx">
+                <div class="rb-title bx">
+                    <h1>用户名与密码</h1>
+                </div>
+                <div class="rb-content">
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx"><laele style="color: red">*</laele>会员编号</span>
+                        <input id="HyNumber" name="hynumber" type="text" class="rbc-inp bx" />
+                    </div>
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx"><laele style="color: red"></laele></span>
+                        <span class="rbc-add" style="font-size: 8px;color: grey">建议手机号作为帐号</span><span id="tip_hynumber"></span>
+                    </div>
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx"><laele style="color: red">*</laele>登陆密码</span>
+                        <input name="loginpwd" type="password" class="rbc-inp bx" />
+                    </div>
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx">确认登陆密码</span>
+                        <input name="rloginpwd" type="password" class="rbc-inp bx" />
+                    </div>
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx"><laele style="color: red">*</laele>支付密码</span>
+                        <input name="paypwd" type="password" class="rbc-inp bx" />
+                    </div>
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx">确认支付密码</span>
+                        <input name="rpaypwd" type="password" class="rbc-inp bx" />
+                    </div>
+                </div>
+            </div>
+            <div class="regbox bx">
+                <div class="rb-title bx">
+                    <h1>会员信息(<label style="color: red;">确认后不可修改</label>)</h1>
+                </div>
+                <div class="rb-content">
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx"><laele style="color: red">*</laele>会员姓名</span>
+                        <input id="HyName" name="username" type="text" class="rbc-inp bx" />
+                    </div>
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx"><laele style="color: red">*</laele>手机号</span>
+                        <input id="HyMobile" name="phone" type="text" class="rbc-inp bx" />
+                    </div>
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx"><laele style="color: red"></laele></span>
+                        <span id="tip_hyphone"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="regbox bx">
+                <div class="rb-title bx">
+                    <h1>位置信息</h1>
+                </div>
+                <div class="rb-content">
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx"><laele style="color: red">*</laele>推荐人编号</span>
+                        <input id="HyTjNumber" name="recommendNO" type="text" value="{$tjArr['hynumber']}" class="rbc-inp bx" />
+                    </div>
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx"><laele style="color: red"></laele></span>
+                        <span id="tip_tjhynumber"></span>
+                    </div>
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx"><laele style="color: red">*</laele>接点人编号</span>
+                        <input id="jdNO" name="jdNO" type="text" value="{$tjArr['hynumber']}" class="rbc-inp bx" />
+                    </div>
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx"><laele style="color: red"></laele></span>
+                        <span id="tip_jdNO"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="regbox bx">
+                <div class="rb-title bx">
+                    <h1>收货地址</h1>
+                </div>
+                <div class="rb-content">
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx"><laele style="color: red">*</laele>收货人</span>
+                        <input name="pickname" type="text" value="" class="rbc-inp bx" />
+                    </div>
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx"><laele style="color: red">*</laele>电话</span>
+                        <input name="pickphone" type="text" value="" class="rbc-inp bx" />
+                    </div>
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx">省份</span>
+                        <input name="province" type="text" value="" class="rbc-inp bx" />
+                    </div>
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx">市</span>
+                        <input name="city" type="text" value="" class="rbc-inp bx" />
+                    </div>
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx">县/区</span>
+                        <input name="area" type="text" value="" class="rbc-inp bx" />
+                    </div>
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx"><laele style="color: red">*</laele>详细地址</span>
+                        <input name="address" type="text" value="" class="rbc-inp bx" />
+                    </div>
+                </div>
+            </div>
+            <div class="regbox bx">
+                <div class="rb-title bx">
+                    <h1>其他</h1>
+                </div>
+                <div class="rb-content">
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx">备注</span>
+                        <input type="text" name="memo" class="rbc-inp bx" />
+                    </div>
+                </div>
+            </div>
+            <div class="reginfo">
+                <input id="hyzcxy" type="checkbox" class="reg-choice" name="hyzcxy" />
+                我已阅读并接受<span><a href="{:U('Member/hyzcxy')}" style="color:#FF0000">《推广商平台合约》</a></span>
+            </div>
+            <div class="reginfo">
+                <button type="submit" name="btn_sumbit" style="width: 100%" class="lg-sub">注册</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $("input[name='hynumber']").on('blur',function () {
+        var hynumber = this.value;
+        $.ajax({
+            url:"{:U('Index/checkHy')}",
+            type:'POST', //GET
+            data:{hynumber:hynumber,kd:0},
+            dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+            success:function(data){
+                if(data.stsc==1)
+                {
+                    $("#tip_hynumber").html('<label style="color: green">'+data.msg+'</label>')
+                }else
+                {
+                    $("#tip_hynumber").html('<label style="color: red">'+data.msg+'</label>');
+                    $("input[name='hynumber']").val('');
+                }
+            },
+        })
+    });
+    $("input[name='recommendNO']").on('blur',function () {
+        var recommendNO = this.value;
+        $.ajax({
+            url:"{:U('Index/checkHy')}",
+            type:'POST', //GET
+            data:{hynumber:recommendNO,kd:4},
+            dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+            success:function(data){
+                if(data.stsc==1)
+                {
+                    $("#tip_tjhynumber").html('<label style="color: green">'+data.msg+'</label>')
+                }else
+                {
+                    $("#tip_tjhynumber").html('<label style="color: red">'+data.msg+'</label>');
+                    $("input[name='recommendNO']").val('100001');
+                }
+            },
+        })
+    });
+    $("input[name='jdNO']").on('blur',function () {
+        var jdNO = this.value;
+        $.ajax({
+            url:"{:U('Index/checkHy')}",
+            type:'POST', //GET
+            data:{hynumber:jdNO,kd:1},
+            dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+            success:function(data){
+                if(data.stsc==1)
+                {
+                    $("#tip_jdNO").html('<label style="color: green">'+data.msg+'</label>')
+                }else
+                {
+                    $("#tip_jdNO").html('<label style="color: red">'+data.msg+'</label>');
+                    $("input[name='jdNO']").val('100001');
+                }
+            },
+        })
+    });
+    $("input[name='phone']").on('blur',function () {
+        var hyphone = this.value;
+        $.ajax({
+            url:"{:U('Index/checkHy')}",
+            type:'POST', //GET
+            data:{hynumber:hyphone,kd:3},
+            dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+            success:function(data){
+                if(data.stsc==1)
+                {
+                    $("#tip_hyphone").html('<label style="color: green">'+data.msg+'</label>')
+                }else
+                {
+                    $("#tip_hyphone").html('<label style="color: red">'+data.msg+'</label>');
+                    $("input[name='phone']").val('');
+                }
+            },
+        })
+    });
+    function checkUserUpdate(){
+        var mobile = $('input[name="phone"]').val();
+        if($('input[name="hynumber"]').val().length==0){
+            layer.alert('会员帐号不能为空', {icon: 2});  //alert(error);
+            return false;
+        }else if($('input[name="loginpwd"]').val().length==0){
+            layer.alert('登陆密码不能为空', {icon: 2});  //alert(error);
+            return false;
+        }else if($('input[name="loginpwd"]').val() != $('input[name="rloginpwd"]').val()){
+            layer.alert('两次登陆密码输入不相同', {icon: 2});  //alert(error);
+            return false;
+        }else if($('input[name="paypwd"]').val().length==0){
+            layer.alert('支付密码不能为空', {icon: 2});  //alert(error);
+            return false;
+        }else if($('input[name="paypwd"]').val() != $('input[name="rpaypwd"]').val()){
+            layer.alert('两次支付密码输入不相同', {icon: 2});  //alert(error);
+            return false;
+        }else if($('input[name="username"]').val().length==0){
+            layer.alert('请输入会员姓名', {icon: 2});  //alert(error);
+            return false;
+        }else if(!checkMobile(mobile)){
+            layer.alert('手机格式错误', {icon: 2});  //alert(error);
+            return false;
+        }else if($('input[name="recommendNO"]').val().length==0){
+            layer.alert('推荐人帐号不能为空', {icon: 2});  //alert(error);
+            return false;
+        }else if($('input[name="jdNO"]').val().length==0){
+            layer.alert('接点人帐号不能为空', {icon: 2});  //alert(error);
+            return false;
+        }else if($('input[name="pickname"]').val().length==0){
+            layer.alert('收货人不能为空', {icon: 2});  //alert(error);
+            return false;
+        }else if($('input[name="pickphone"]').val().length==0){
+            layer.alert('收货人电话不能为空', {icon: 2});  //alert(error);
+            return false;
+        }else if($('input[name="address"]').val().length==0){
+            layer.alert('详细地址不能为空', {icon: 2});  //alert(error);
+            return false;
+        }else if(!$('#hyzcxy').is(':checked')){
+            layer.alert('请仔细阅读平台注册协议，同意合约后方可注册', {icon: 2});  //alert(error);
+            return false;
+        }
+        return true;
+    }
+    function checkMobile(tel) {
+        var reg = /(^1[3|4|5|7|8][0-9]{9}$)/;
+        if (reg.test(tel)) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+</script>
+<include file="Public:footer" />

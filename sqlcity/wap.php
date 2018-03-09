@@ -1,0 +1,256 @@
+﻿<?php
+//session_start(); //开启 session 
+header("content-type:text/html;charset=utf-8;");
+require_once "dbClassMessage.php";
+?>
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<script type="text/javascript" src="jquery-3.2.0.min.js"></script>
+<title>HTML5手机端三级联动城市选择代码</title>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-appearance: none; //去掉浏览器默认样式
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-touch-callout: none;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0 auto;
+	width: 100%;
+	min-height: 100%;
+	overflow-x: hidden;
+	-webkit-user-select: none;
+}
+
+body {
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	-webkit-text-size-adjust: 100%; //关闭自动调整字体
+	-webkit-overflow-scrolling: touch;
+	overflow-scrolling: touch;
+}
+
+input {
+	width: 90%;
+	height: 40px;
+	font-size: 18px;
+	border: 1px solid #b72f20;
+	border-radius: 5px;
+	margin: 20px 5% 0 5%;
+	padding: 5px;
+}
+.addmantop{width: 100%;height: 55px;border-bottom: 1px solid #b5b4b5;text-align: center;color: #898a89;}
+.addmantop span{line-height: 55px;font-size: 20px;}
+.addmantop input{float: right;margin-right: 15px;line-height: 54px;border:0px;height: 54px;background-color: #fff;}
+.addmancon ul li{width: 100%;height: 50px;padding:6px 15px 6px 15px;border-bottom: 1px solid #b5b4b5;line-height: 40px;font-size: 16px;color: #898a89;}
+.addmancon ul li input{width: 100%;height: 100%;border: 0px;}
+.addmancon ul li select{width: 31%;font-size: 12px;height: 35px;margin-top: -15px;}
+.default{color: #898a89;font-size: 18px;margin: 0 auto;line-height: 32px;margin-top: 20px;}
+.default div{width: 32px;height: 32px;float: left;margin-left: 30%}
+.default .radioclass{background:url(__PUBLIC__/mobile/img/radion2.png) no-repeat center center;width: 32px;height: 32px;}
+.default .radioclass.active {
+    background:url(__PUBLIC__/mobile/img/radio1.png) no-repeat right center;width: 32px;height: 32px;
+}
+.addman{display: none; position:fixed;width: 100%;height: 100%;background-color: #fff;top:0px;overflow: auto;}
+.addman ul li{width: 100%;height: 50px;padding:6px 15px 6px 15px;border-bottom: 1px solid #b5b4b5;line-height: 40px;font-size: 16px;color: #898a89;}
+.addman ul li .right{float: right;}
+.addman ul .li1{border-bottom: 1px solid #b5b4b5;height: 30px;line-height: 20px;font-size: 14px;}
+.addman ul .li1 span{width: 33%;}
+.addman ul .li1 #left{color: #0094DE;}
+</style>
+
+</head>
+
+<body>
+
+<form action="__CONTROLLER__/address" id="addman_form" method="post" onSubmit="return checkForm()">
+	<div class="addmantop">
+		<span>地址管理</span>
+		<!-- <input type="submit" name=""  value="保存">  -->
+	</div>
+	<div class="addmancon">
+		<ul>
+
+			<li id="demo1"><span id="demo2">省份、城市、区县</span><input id="value2" type="hidden" /></li>
+
+		</ul>
+	</div>
+
+</form>
+<div class="addman">
+	<div class="addmantop">
+		<span id="houtui" class="glyphicon glyphicon-menu-left"><</span>
+		<span>选择地址</span>
+
+	</div>
+
+	<ul class="rightNav">
+		<li class="li1"><samp id="left">省</samp><span id="content">市</span><span id="right">区县</span>
+		<input type="hidden" name="pre" id="prov"><input type="hidden" name="city" id="city"><input type="hidden" name="area" id="area">
+		</li>
+	<?php
+	$list = $db->getMoreData("select * from ds_region where parent_id=0 and level=1");
+	for ($i=0; $i < count($list) ; $i++) { 
+		echo "<li id='".$list[$i]['id']."' class='prov'>".$list[$i]['name']."<span class='right'>></span></li>";
+	}
+	?>
+
+	</ul>
+</div>
+
+<script>
+var addman=$(".addman");
+var rightNav=$(".rightNav");
+$("#demo1").click(function(){
+var prov = $(".prov");
+//alert(prov.length);
+	addman.css({
+        display: "block",
+        //transition: "opacity .5s"
+    });
+    rightNav.css({
+        right: "0px",
+        transition: "right 2s"
+    });
+    $(".city").remove();
+    $(".area").remove();
+    if (prov.length<1) {
+    	alert('g');
+    }
+})
+
+
+$("#houtui").click(function(){
+	addman.css({
+        display: "none",
+        //transition: "opacity .5s"
+    });
+})
+
+$(".prov").click(function(){
+	var id=$(this).attr("id");
+	var name=$(this).text();
+	$("#left").text(name);
+	$("#prov").val(id);
+	$("#left").css({
+		color:"#898a89",
+	});
+	$("#content").css({
+		color:"#0094DE",
+	})
+	city_ajax(id)
+})
+
+
+
+function city_ajax(id){
+	$.ajax({
+	type: 'POST',
+	url: "ajax.php",
+	data:"lid="+id,
+	success: function(data){ 
+	console.log(data);
+	var jnobj=JSON.parse(data);
+	console.log(jnobj);
+	$(".prov").remove();
+
+	    for (var a = 0; a < jnobj.length; a++) {
+			  //声明option.<option value="pres[i]">Pres[i]</option>
+			var op = "<li id='"+jnobj[a]['id']+"' class='city'>"+jnobj[a]['name']+"<span class='right'>></span></li>";
+			  //添加
+			rightNav.append(op);
+	   }
+  
+	    $(".city").click(function(){
+			var cid=$(this).attr("id");
+			var cname=$(this).text();
+			$("#content").text(cname);
+			$("#city").val(cid);
+			$("#content").css({
+				color:"#898a89",
+			});
+			$("#right").css({
+				color:"#0094DE",
+			})
+			$.ajax({
+				type: 'POST',
+				url: "ajax.php",
+				data:"lid="+cid,
+				success: function(data){ 
+					var jnobj=JSON.parse(data);
+					console.log(jnobj);
+					$(".city").remove();
+				    for (var b = 0; b < jnobj.length; b++) {
+						  //声明option.<option value="pres[i]">Pres[i]</option>
+						var op1 = "<li id='"+jnobj[b]['id']+"' class='area'>"+jnobj[b]['name']+"</li>";
+						  //添加
+						rightNav.append(op1);
+				   }
+
+				    $(".area").click(function(){
+				    	var aid=$(this).attr("id");
+						var aname=$(this).text();
+						$("#right").text(aname);
+						$("#area").val(aid);
+						var manaddress = $(".li1").text();
+						$("#demo2").html(manaddress);
+						addman.css({display: "none",});
+					})
+				},
+			  
+			});
+		})
+
+
+	},
+  
+  });
+}
+
+
+
+
+// window.onload = function(){ 
+// 	$.ajax({  
+
+// 		url:"wapajax.php",  
+// 		success: function(data){  
+// 		// console.log(data);
+// 			var obj = JSON.parse(data);
+// 			var provs_data = obj.provs_data;
+// 			var citys_data = obj.citys_data;
+// 			var dists_data = obj.dists_data;
+// 			console.log(obj);
+// 			var area2 = new LArea();
+// 			area2.init({
+// 				'trigger': '#demo2',
+// 				'valueTo': '#value2',
+// 				'keys': {
+// 					id: 'id',
+// 					name: 'name'
+// 				},
+// 				'type': 2,
+// 				'data': [provs_data, citys_data, dists_data]
+// 			});
+// 		}
+// 	});
+// }
+</script>
+
+<!--readem 以下非正文信息-->
+
+<!--end readem-->
+</body>
+</html>
+

@@ -1,0 +1,47 @@
+﻿
+ 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <!-- <link rel="stylesheet" type="text/css" href="jQuerySwipeslider/css/style.css">
+ -->        <link rel="stylesheet" type="text/css" href="jQuerySwipeslider/dist/swipeslider.css">
+    </head>
+    <body>
+        <section>
+            <h2>Responsiveness</h2>
+            <p>Slider can resize itself with the window accordingly. Also image self resizing to fit slider.</p>
+            <figure id="responsiveness" class="swipslider">
+                <ul class="sw-slides">
+                    <li class="sw-slide">
+                    <img src="img/children_game_concept01.jpg" >
+                    </li>
+                    <li class="sw-slide">
+                    <img src="img/children_game_concept02.jpg" >
+                    </li>
+                </ul>
+            </figure>
+        </section>
+    </body>
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    
+    <script type="text/javascript" src="jQuerySwipeslider/dist/swipeslider.min.js"></script>
+    <script>
+    $(window).load(function() {
+        // $('#full_feature').swipeslider();
+        // $('#content_slider').swipeslider({
+        //     transitionDuration: 600,
+        //     autoPlayTimeout: 10000,
+        //     sliderHeight: '300px'
+        // });
+        $('#responsiveness').swipeslider();
+        // $('#customizability').swipeslider({
+        //     transitionDuration: 1500, 
+        //     autoPlayTimeout: 4000, 
+        //     timingFunction: 'cubic-bezier(0.38, 0.96, 0.7, 0.07)',
+        //     sliderHeight: '30%'
+        // });
+    });
+    </script>
+</html>

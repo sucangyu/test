@@ -1,0 +1,80 @@
+<include file="Public/header" />
+<script type="text/javascript">
+    //调用微信JS api 支付
+    function jsApiCall()
+    {
+        WeixinJSBridge.invoke(
+                'getBrandWCPayRequest',{$jsApiParameters},
+        function(res){
+            if(res.err_msg=="get_brand_wcpay_request:ok"){
+                document.getElementById("zhifu").style.display='none';
+                document.getElementById("sucessDiv").style.display='block';
+            }
+            /*WeixinJSBridge.log(res.err_msg);
+             alert(res.err_code+res.err_desc+res.err_msg);*/
+        }
+    )
+    }
+
+    function callpay(){
+        if (typeof WeixinJSBridge == "undefined"){
+            if( document.addEventListener ){
+                document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+            }else if (document.attachEvent){
+                document.attachEvent('WeixinJSBridgeReady', jsApiCall);
+                document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+            }
+        }else{
+            jsApiCall();
+        }
+    }
+
+    function rbck(){
+        window.location.href="<?php echo U('Index/index');?>";
+    }
+</script>
+<div id="wrapper" class="bg24 pb20 bx">
+    <header class="header">
+        <h1>自助报单</h1>
+    </header>
+    <div class="mainbox">
+        <form name="form1" method="post" action="{:U('Index/cancelPay')}" id="form1" >
+            <div class="regbox bx">
+                <div class="rb-title bx">
+                    <h1>支付信息确认</h1>
+                </div>
+
+                <div class="rb-content">
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx">支付单号</span>
+                        <input style="width: 100%" type="text" class="rbc-inp bx" value="{$oderID}" disabled />
+                    </div>
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx">商品名称</span>
+                        <input style="width: 100%" type="text" class="rbc-inp bx" value="{$goodsArr['gtitle']}" disabled/>
+                    </div>
+                    <div class="rbc-mod">
+                        <span class="rbc-name bx">金额</span>
+                        <input style="width: 100%" type="text" class="rbc-inp bx" value="{$goodsArr['price']}" disabled/>
+                    </div>
+                </div>
+                <div class="rb-title bx" >
+                    <h1 style="color: red">支付说明:</h1>
+                    <h1 style="color: red">建议您截图保存好当前支付单号，如支付过程中遇到问题您可凭借此单号向客服人员咨询！</h1>
+                </div>
+            </div>
+
+            <div class="reginfo" id="zhifu" style="">
+                <input type="hidden" name="oderID" value="{$oderID}" />
+                <!--<button type="button" onclick="window.location.href='{:U(\'Index/canclePay\',array(''))}'" name="btn_sumbit" style="width: 48%;float: left" class="lg-sub">取消支付</button>-->
+                <!--<button type="submit" name="btn_sumbit" style="width: 48%;float: right" class="lg-sub">确定支付</button>-->
+                <input type="submit" class="lg-sub" style="width: 48%;float: left" name="upay" value="取消支付">
+                <input type="button" class="lg-sub" style="width: 48%;float: right" name="apay" onclick="callpay()" value="确定支付">
+            </div>
+            <div class="reginfo" id="sucessDiv" style="display:none;">
+                <input type="button" class="lg-sub" style="width: 100%;" name="apay" onclick="rbck();" value="支付成功，点击返回">
+            </div>
+        </form>
+    </div>
+</div>
+<include file="Public:footer" />

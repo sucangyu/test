@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="content-type" charset="utf-8" />
+<title></title>
+<script type="text/javascript" src="./chart.js/dist/chart.js"></script>
+</head>
+<style type="text/css">
+.img-wrap{
+  width: 30%; /* 这里设置占屏幕宽度百分比 */
+  /*margin: 0 auto; */
+}   
+/* 创建一个正方形容器 */
+.img-container{
+  width: 100%;
+  height: 0px;
+  padding-bottom: 100%;
+  overflow:hidden;
+  margin: 0;
+  position:relative;
+}
+
+/* 采用绝对定位 */
+.img-wrap img{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+}
+</style>
+<body>
+<div class='img-wrap'>
+      <div class="img-container">
+            <img src="radio1.png" />
+      </div>
+</div>
+</body>
+</html>
+
+ 

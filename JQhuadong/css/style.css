@@ -1,0 +1,67 @@
+
+.demo{width: 100%;padding: 2em 0;margin: 0 auto;text-align: center;}
+
+.progress{
+    width: 50%;
+    height: 15px;
+    line-height: 20px;
+    background: #CCCCCC;
+    box-shadow: none;
+    padding: 6px;
+    margin-top:10px;
+    overflow: visible;
+    border-radius:7px;
+}
+.progress:after{
+    content: "";
+    display: block;
+    border-top: 2px dashed #fff;
+    margin-top:0px;
+}
+.progressbar-title{
+    color:#d8dedc;
+    font-size:12px;
+    margin:5px 0;
+    font-weight: bold;
+}
+.progress .progress-bar{
+    position: relative;
+    border-radius: 5px 0 0 5px;
+    animation: animate-positive 2s;
+}
+.progress .progress-bar span{
+    position: absolute;
+    top: -40px;
+    right: -32px;
+    color: #fff;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 1px 1px;
+    background: #333;
+    border-radius: 0 0 5px 5px;
+}
+.progress .progress-bar span:before{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 6px;
+    border: 5px solid transparent;
+    border-top: 5px solid #333;
+}
+.progress .progress-bar span:after{
+    content: "\f072";
+    font-family: fontawesome;
+    font-size: 24px;
+    color: #333;
+    position: absolute;
+    top: 32px;
+    right: 10px;
+    transform: rotateZ(48deg);
+}
+@-webkit-keyframes animate-positive {
+    0% { width: 0%;}
+}
+@keyframes animate-positive {
+    0% { width:0%; }
+}

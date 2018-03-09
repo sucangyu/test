@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://www.17sucai.com/preview/1/2017-02-22/cd/index.html -->
+<html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQuery节点分布圆形循环信息展示</title>
+
+<link rel="stylesheet" type="text/css" href="./bootstrap.css">
+<link rel="stylesheet" type="text/css" href="./font-awesome.min.css">
+<link rel="stylesheet" href="./s8CyrcleInfoBox.css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="./style(1).css" media="screen" charset="utf-8">
+
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+			<p class="title">Cyrcleinfo with Default Value</p>
+			<div class="circle1">
+				<ul class="circleWrapper wStyle1" style="height: 247px;">
+					<li>
+						<div class="circleFeature fStyle1" data-cyrclebox="f1" style="line-height: 55px; transform: rotate(0deg) translate(123.5px) rotate(0deg);">Box1</div>
+						<div class="circleBox" id="f1" style="display: none;"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+							Eveniet,
+							dolorem.
+						</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle1" data-cyrclebox="f2" style="line-height: 55px; transform: rotate(45deg) translate(123.5px) rotate(-45deg);">Box2</div>
+						<div class="circleBox" id="f2" style="display: none;">Lorem ipsum dolor sit.</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle1" data-cyrclebox="f3" style="line-height: 55px; transform: rotate(90deg) translate(123.5px) rotate(-90deg);">Box3</div>
+						<div class="circleBox" id="f3" style="display: none;"> Lorem ipsum dolor sit amet, consectetur.</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle1" data-cyrclebox="f4" style="line-height: 55px; transform: rotate(135deg) translate(123.5px) rotate(-135deg);">Box4</div>
+						<div class="circleBox" id="f4" style="display: none;"><strong>Lorem ipsum dolor</strong> sit amet, consectetur
+							adipisicing
+							elit. Eveniet,Lorem ipsum dolor sit amet, consectetur. dolorem.
+						</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle1" data-cyrclebox="f5" style="line-height: 55px; transform: rotate(180deg) translate(123.5px) rotate(-180deg);">Box5</div>
+						<div class="circleBox" id="f5" style="display: none;">, consectet Lorem ipsum dolor.ur adipisicing
+							elit.
+							Eveniet, dolorem.
+						</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle1 circleSelect" data-cyrclebox="f6" style="line-height: 55px; transform: rotate(225deg) translate(123.5px) rotate(-225deg);">Box6</div>
+						<div class="circleBox" id="f6" style="display: block;"> Lorem ipsum Lorem ipsum dolor sit. g elit. Eveniet,
+							dolorem.
+						</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle1" data-cyrclebox="f7" style="line-height: 55px; transform: rotate(270deg) translate(123.5px) rotate(-270deg);">Box7</div>
+						<div class="circleBox" id="f7" style="display: none;"> Lorem ipsum Lorem ipsum dolor sit amet, consectetur adipisicing.
+							iet,
+							dolorem.
+						</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle1" data-cyrclebox="f8" style="line-height: 55px; transform: rotate(315deg) translate(123.5px) rotate(-315deg);">Box8</div>
+						<div class="circleBox" id="f8" style="display: none;"> Lorem ipsum Lorem ipsum. adipisicing elit. Eveniet,
+							dolorem.
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--Circle 2-->
+		<div class="col-sm-4">
+			<p class="title">Clickable without autoSlide</p>
+			<div class="circle2">
+				<ul class="circleWrapper wStyle2" style="height: 249px;">
+					<li>
+						<div class="circleFeature fStyle2" data-cyrclebox="cf1" style="line-height: 53px; transform: rotate(0deg) translate(124.5px) rotate(0deg);"><span class="fa fa-cloud-upload fa-2x"></span></div>
+						<div class="circleBox innerStyle2" id="cf1" style="display: none;"><strong>box1</strong><br>Lorem ipsum dolor sit amet,
+							consectetur adipisicing elit. Natus, omnis.
+						</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle2 circleSelect" data-cyrclebox="cf2" style="line-height: 53px; transform: rotate(60deg) translate(124.5px) rotate(-60deg);"><span class="fa fa-envelope fa-2x"></span></div>
+						<div class="circleBox innerStyle2" id="cf2" style="display: block;"><strong>box2</strong><br>Lorem ipsum donsectetur
+							adipisicing elit. Natus, omnis.
+						</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle2" data-cyrclebox="cf3" style="line-height: 53px; transform: rotate(120deg) translate(124.5px) rotate(-120deg);"><span class="fa fa-desktop fa-2x"></span></div>
+						<div class="circleBox innerStyle2" id="cf3"><strong>box3</strong><br>Lorem ipsum met.
+							consectetur adipisicing elit. Natus, omnis.
+						</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle2" data-cyrclebox="cf4" style="line-height: 53px; transform: rotate(180deg) translate(124.5px) rotate(-180deg);"><span class="fa fa-coffee fa-2x"></span>
+						</div>
+						<div class="circleBox innerStyle2" id="cf4"><strong>box4</strong><br>Lorem ipsum dolor sit amet,
+							cons ectetur adipisicing elit. Natus, omnis.
+						</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle2" data-cyrclebox="cf5" style="line-height: 53px; transform: rotate(240deg) translate(124.5px) rotate(-240deg);"><span class="fa fa-cog fa-2x"></span>
+						</div>
+						<div class="circleBox innerStyle2" id="cf5" style="display: none;"><strong>box5</strong><br>Lorem lor sit amet,
+							consectetur adipisicing elit. Natus, omnis.
+						</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle2" data-cyrclebox="cf6" style="line-height: 53px; transform: rotate(300deg) translate(124.5px) rotate(-300deg);"><span class="fa fa-commenting fa-2x"></span></div>
+						<div class="circleBox innerStyle2" id="cf6" style="display: none;"><strong>box6</strong><br>Lorem ipisicing. nsectetur
+							adipisicing elit. Natus, omnis.
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<p class="title">500ms speed and Not Responsive</p>
+			<div class="circle3">
+				<ul class="circleWrapper wStyle3 noResponsive" style="height: 253px;">
+					<li>
+						<div class="circleFeature fStyle3 noResponsive circleSelect3" data-cyrclebox="c3f1" style="line-height: 59px; transform: rotate(0deg) translate(126.5px) rotate(0deg);"><strong>1</strong></div>
+						<div class="circleBox innerStyle3 noResponsive" id="c3f1" style="display: block; opacity: 0.032278;"><strong>One</strong></div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle3 noResponsive" data-cyrclebox="c3f2" style="line-height: 59px; transform: rotate(36deg) translate(126.5px) rotate(-36deg);"><strong>2</strong></div>
+						<div class="circleBox innerStyle3 noResponsive" id="c3f2" style="display: none;"><strong>two</strong></div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle3 noResponsive" data-cyrclebox="c3f3" style="line-height: 59px; transform: rotate(72deg) translate(126.5px) rotate(-72deg);"><strong>3</strong></div>
+						<div class="circleBox innerStyle3 noResponsive" id="c3f3" style="display: none;"><strong>Three</strong></div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle3 noResponsive" data-cyrclebox="c3f4" style="line-height: 59px; transform: rotate(108deg) translate(126.5px) rotate(-108deg);"><strong>4</strong></div>
+						<div class="circleBox innerStyle3 noResponsive" id="c3f4" style="display: none;"><strong>Four</strong></div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle3 noResponsive" data-cyrclebox="c3f5" style="line-height: 59px; transform: rotate(144deg) translate(126.5px) rotate(-144deg);"><strong>5</strong></div>
+						<div class="circleBox innerStyle3 noResponsive" id="c3f5" style="display: none;"><strong>Five</strong></div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle3 noResponsive" data-cyrclebox="c3f6" style="line-height: 59px; transform: rotate(180deg) translate(126.5px) rotate(-180deg);"><strong>6</strong></div>
+						<div class="circleBox innerStyle3 noResponsive" id="c3f6" style="display: none;"><strong>Six</strong></div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle3 noResponsive" data-cyrclebox="c3f7" style="line-height: 59px; transform: rotate(216deg) translate(126.5px) rotate(-216deg);"><strong>7</strong></div>
+						<div class="circleBox innerStyle3 noResponsive" id="c3f7" style="display: none;"><strong>Seven</strong></div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle3 noResponsive" data-cyrclebox="c3f8" style="line-height: 59px; transform: rotate(252deg) translate(126.5px) rotate(-252deg);"><strong>8</strong></div>
+						<div class="circleBox innerStyle3 noResponsive" id="c3f8" style="display: none;"><strong>Eight</strong></div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle3 noResponsive" data-cyrclebox="c3f9" style="line-height: 59px; transform: rotate(288deg) translate(126.5px) rotate(-288deg);"><strong>9</strong></div>
+						<div class="circleBox innerStyle3 noResponsive" id="c3f9" style="display: none;"><strong>Nine</strong></div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle3 noResponsive" data-cyrclebox="c3f10" style="line-height: 59px; transform: rotate(324deg) translate(126.5px) rotate(-324deg);"><strong>10</strong></div>
+						<div class="circleBox innerStyle3 noResponsive" id="c3f10" style="display: block; opacity: 0.967722;"><strong>Ten</strong></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--second Row for show the Spread Type-->
+	<h1 style="padding: 33px;
+	text-align: center;
+	color: #00b786;">LEFT RIGHT TOP DOWN "The Four Type For Bubble Spread"</h1>
+	<div class="row">
+		<div class="col-lg-3 col-sm-6">
+			<p class="title">Right Style</p>
+			<div class="circle4">
+				<ul class="circleWrapper wStyle4" style="height: 179px;">
+					<li>
+						<div class="circleFeature fStyle4" data-cyrclebox="c4f1" style="line-height: 41px; transform: rotate(270deg) translate(89.5px) rotate(-270deg);"><span class="fa fa-male fa-3x"></span></div>
+						<div class="circleBox" id="c4f1" style="display: none;">Lorem ipsum dolor sit.</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle4" data-cyrclebox="c4f2" style="line-height: 41px; transform: rotate(330deg) translate(89.5px) rotate(-330deg);"><span class="fa fa-link fa-3x"></span></div>
+						<div class="circleBox" id="c4f2" style="display: none;">Lorem Lorem ipsum dolor sit.ipsum dolor sit.</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle4 circleSelect4" data-cyrclebox="c4f3" style="line-height: 41px; transform: rotate(390deg) translate(89.5px) rotate(-390deg);"><span class="fa fa-key fa-3x"></span></div>
+						<div class="circleBox" id="c4f3" style="display: block;">Lorem Lorem Lorem ipsum dolor.</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle4" data-cyrclebox="c4f4" style="line-height: 41px; transform: rotate(450deg) translate(89.5px) rotate(-450deg);"><span class="fa fa-globe fa-3x"></span></div>
+						<div class="circleBox" id="c4f4" style="display: none;">Lorem Lorem Lorem Lorem ipsum dolor sit amet, consectetur. ipsum dolor.</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-lg-3 col-sm-6">
+			<div class="circle5">
+				<p class="title">Left Style</p>
+				<ul class="circleWrapper wStyle4" style="height: 179px;">
+					<li>
+						<div class="circleFeature fStyle4 circleSelect4" data-cyrclebox="c5f1" style="line-height: 41px; transform: rotate(90deg) translate(89.5px) rotate(-90deg);"><span class="fa fa-male fa-3x"></span></div>
+						<div class="circleBox" id="c5f1" style="display: block;">Lorem ipsum dolor sit.</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle4" data-cyrclebox="c5f2" style="line-height: 41px; transform: rotate(150deg) translate(89.5px) rotate(-150deg);"><span class="fa fa-link fa-3x"></span></div>
+						<div class="circleBox" id="c5f2" style="display: none;">Lorem Lorem ipsum dolor sit.ipsum dolor sit.</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle4" data-cyrclebox="c5f3" style="line-height: 41px; transform: rotate(210deg) translate(89.5px) rotate(-210deg);"><span class="fa fa-key fa-3x"></span></div>
+						<div class="circleBox" id="c5f3" style="display: none;">Lorem Lorem Lorem ipsum dolor.</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle4" data-cyrclebox="c5f4" style="line-height: 41px; transform: rotate(270deg) translate(89.5px) rotate(-270deg);"><span class="fa fa-globe fa-3x"></span></div>
+						<div class="circleBox" id="c5f4" style="display: none;">Lorem Lorem Lorem Lorem ipsum dolor sit amet, consectetur. ipsum dolor.</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-lg-3 col-sm-6">
+			<p class="title">Top Style</p>
+			<div class="circle6">
+				<ul class="circleWrapper wStyle4" style="height: 179px;">
+					<li>
+						<div class="circleFeature fStyle4" data-cyrclebox="c6f1" style="line-height: 41px; transform: rotate(180deg) translate(89.5px) rotate(-180deg);"><span class="fa fa-male fa-3x"></span></div>
+						<div class="circleBox" id="c6f1" style="display: none;">Lorem ipsum dolor sit.</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle4" data-cyrclebox="c6f2" style="line-height: 41px; transform: rotate(240deg) translate(89.5px) rotate(-240deg);"><span class="fa fa-link fa-3x"></span></div>
+						<div class="circleBox" id="c6f2" style="display: none;">Lorem Lorem ipsum dolor sit.ipsum dolor sit.</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle4 circleSelect4" data-cyrclebox="c6f3" style="line-height: 41px; transform: rotate(300deg) translate(89.5px) rotate(-300deg);"><span class="fa fa-key fa-3x"></span></div>
+						<div class="circleBox" id="c6f3" style="display: block;">Lorem Lorem Lorem ipsum dolor.</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle4" data-cyrclebox="c6f4" style="line-height: 41px; transform: rotate(360deg) translate(89.5px) rotate(-360deg);"><span class="fa fa-globe fa-3x"></span></div>
+						<div class="circleBox" id="c6f4" style="display: none;">Lorem Lorem Lorem Lorem ipsum dolor sit amet, consectetur. ipsum dolor.</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-lg-3 col-sm-6">
+			<p class="title">bottom Style</p>
+			<div class="circle7">
+				<ul class="circleWrapper wStyle4" style="height: 179px;">
+					<li>
+						<div class="circleFeature fStyle4" data-cyrclebox="c7f1" style="line-height: 41px; transform: rotate(0deg) translate(89.5px) rotate(0deg);"><span class="fa fa-male fa-3x"></span></div>
+						<div class="circleBox" id="c7f1" style="display: none;">Lorem ipsum dolor sit.</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle4" data-cyrclebox="c7f2" style="line-height: 41px; transform: rotate(60deg) translate(89.5px) rotate(-60deg);"><span class="fa fa-link fa-3x"></span></div>
+						<div class="circleBox" id="c7f2" style="display: none;">Lorem Lorem ipsum dolor sit.ipsum dolor sit.</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle4 circleSelect4" data-cyrclebox="c7f3" style="line-height: 41px; transform: rotate(120deg) translate(89.5px) rotate(-120deg);"><span class="fa fa-key fa-3x"></span></div>
+						<div class="circleBox" id="c7f3" style="display: block;">Lorem Lorem Lorem ipsum dolor.</div>
+					</li>
+					<li>
+						<div class="circleFeature fStyle4" data-cyrclebox="c7f4" style="line-height: 41px; transform: rotate(180deg) translate(89.5px) rotate(-180deg);"><span class="fa fa-globe fa-3x"></span></div>
+						<div class="circleBox" id="c7f4" style="display: none;">Lorem Lorem Lorem Lorem ipsum dolor sit amet, consectetur. ipsum dolor.</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="./jquery-1.11.0.min.js.下载"></script>
+<script src="./s8CyrcleInfoBox.js.下载" type="text/javascript"></script>
+<script>$(".circle1").s8CircleInfoBox()</script>
+<script>$(".circle2").s8CircleInfoBox({
+	autoSlide: false,
+	action: "click"
+})</script>
+<script>$(".circle3").s8CircleInfoBox({
+	notResponsive: true,
+	hoverStyle:"circleSelect3",
+	slideSpeed: 500,
+	breakpoint: 0
+
+})</script>
+<script>$(".circle4").s8CircleInfoBox({
+	hoverStyle: "circleSelect4",
+	spreadStyle: "right"
+})</script>
+<script>$(".circle5").s8CircleInfoBox({
+	hoverStyle: "circleSelect4",
+	spreadStyle: "left"
+})</script>
+<script>$(".circle6").s8CircleInfoBox({
+	hoverStyle: "circleSelect4",
+	spreadStyle: "top"
+})</script>
+<script>$(".circle7").s8CircleInfoBox({
+	hoverStyle: "circleSelect4",
+	spreadStyle: "bottom"
+})</script>
+
+
+</body></html>

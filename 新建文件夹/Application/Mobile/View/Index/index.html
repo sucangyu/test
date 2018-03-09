@@ -1,0 +1,130 @@
+<!DOCTYPE html >
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>德商首页</title>
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/mobile_css/index.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/mobile_css/public.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/bootstrap-3.3.7/css/bootstrap.css"/>
+<script src="__PUBLIC__/mobile_js/jquery.js"></script>
+<script src="__PUBLIC__/mobile_js/jquery.json.js"></script>
+<script src="__PUBLIC__/mobile_js/layer.js"></script>
+<script src="__PUBLIC__/mobile_js/TouchSlide.1.1.js"></script>
+<script src="__PUBLIC__/mobile_js/touchslider.dev.js"></script>
+<script src="__PUBLIC__/bootstrap-3.3.7/js/bootstrap.js"></script>
+<style type="text/css">
+.clalist{width: 100%;height: 80px;}
+.clalist .col-xs-6{height: 80px;    }
+.clalist .col-xs-6 .btn{width: 70px;margin-top: 15px;border-color:#A52A2A;}
+.clalist .col-xs-6 .btn .glyphicon{color:#A52A2A;}
+.clalist .col-xs-6 p{font-size: 12px;}
+.product{border-top:5px solid #8A8A8A ;width: 100%; }
+.product .col-xs-6{margin-bottom: 5px; padding-right: 5px;padding-left: 5px;}
+.product .col-xs-6 img{width: 100%;margin:0 auto;border:1px solid #E3E3E3;}
+.product .col-xs-6 .details{margin-top: 10px;}
+.product .col-xs-6 .details .details1{float: left;width: 20%;}
+.product .col-xs-6 .details .details1 img{width: 100%;}
+.product .col-xs-6 .details .details1 p{font-size: 12px;text-align: center;}
+.product .col-xs-6 .details .details2{float: left;width: 80%;margin-top: 6px;padding-left:5px;font-size: 12px;}
+.product .col-xs-6 .details .details2 .p1{width: 100%;overflow: hidden;text-overflow: ellipsis; white-space: nowrap; }
+.product .col-xs-6 .details .details2 .span1{color: #CD0000;}
+.product .col-xs-6 .details .details2 .span2{color: #A8A8A8;}
+</style>
+</head>
+<body>
+<include file="Public/header"/>
+<div id="scrollimg" class="scrollimg">
+  <div class="bd">
+	 <ul>
+	    	<li><a href="#" <if condition="$v['target'] eq 1">target="_blank"</if> ><img src="__PUBLIC__/images/563a01ccb5dc9.jpg" title="{$v[title]}"width="100%" style="{$v[style]}"/></a></li>
+	    	<li><a href="#" <if condition="$v['target'] eq 1">target="_blank"</if> ><img src="__PUBLIC__/images/563a014600063.jpg" title="{$v[title]}"width="100%" style="{$v[style]}"/></a></li>
+     </ul>
+  </div>
+  <div class="hd">
+	<ul></ul>
+  </div>
+</div>
+<script type="text/javascript">
+	TouchSlide({ 
+		slideCell:"#scrollimg",
+		titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+		mainCell:".bd ul", 
+		effect:"leftLoop", 
+		autoPage:true,//自动分页
+		autoPlay:true //自动播放
+	});
+</script> 
+
+<div class="clalist">
+	<div class="col-xs-6">
+		<a class="btn btn-default" href="{:U('Index/goodlist')}" style="float: right;"><span class="glyphicon glyphicon-list"></span></a>
+		<p style="float: right;width: 30px; margin-top: 49px;margin-right: -50px;">分类</p>
+	</div>
+	<div class="col-xs-6">
+		<a class="btn btn-default" href="{:U('Index/stats')}"><span class="glyphicon glyphicon-stats"></span></a>
+		<p style="margin-left: 15px;">   排行榜</p>
+	</div>
+</div>
+<div class="product">
+	<p style="text-align: center;color:#A8A8A8;margin-top: 10px;"><span>————— </span>产品展示<span> —————</span></p>
+	<div class="col-xs-6">
+		<img src="__PUBLIC__/images/jmpic/1442452886830104584.jpg">
+		<div class="details">
+			<div class="details1">
+				<img src="__PUBLIC__/images/v-shop/logo.png" alt="..." class="img-circle">
+				<p>窦骁</p>
+			</div>
+			<div class="details2">
+				<p class="p1">商品名称xxxxxxxxxxxxxxxxxxxxxx</p>
+				<span class="span1">￥155.0</span><span class="span2">  123人已购买</span>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-6">
+		<img src="__PUBLIC__/images/jmpic/1442452784680942491.jpg">
+		<div class="details">
+			<div class="details1">
+				<img src="__PUBLIC__/images/v-shop/logo.png" alt="..." class="img-circle">
+				<p>窦骁</p>
+			</div>
+			<div class="details2">
+				<p class="p1">商品名称xxxxxxxxxxxxxxxxxxxxxx</p>
+				<p class="p2"><span class="span1">￥155.0</span><span class="span2">  123人已购买</span></p>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-6">
+		<img src="__PUBLIC__/images/jmpic/1442452784680942491.jpg">
+		<div class="details">
+			<div class="details1">
+				<img src="__PUBLIC__/images/v-shop/logo.png" alt="..." class="img-circle">
+				<p>窦骁</p>
+			</div>
+			<div class="details2">
+				<p class="p1">商品名称xxxxxxxxxxxxxxxxxxxxxx</p>
+				<p class="p2"><span class="span1">￥155.0</span><span class="span2">  123人已购买</span></p>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-6">
+		<img src="__PUBLIC__/images/jmpic/1442452886830104584.jpg">
+		<div class="details">
+			<div class="details1">
+				<img src="__PUBLIC__/images/v-shop/logo.png" alt="..." class="img-circle">
+				<p>窦骁</p>
+			</div>
+			<div class="details2">
+				<p class="p1">商品名称xxxxxxxxxxxxxxxxxxxxxx</p>
+				<p class="p2"><span class="span1">￥155.0</span><span class="span2">  123人已购买</span></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<include file="Public/footer"/>
+</body>
+</html> 
