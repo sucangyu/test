@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>上传</title>
+    <link href="assets/css/basic.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/jquery.Jcrop.css" rel="stylesheet" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<body>
+<div>
+    <img id="headimg" src="assets/image/noimage.png" style="display:block;" width="130"/>
+    <button class="save-btn" onclick="head_img.click()">修改头像</button>
+</div>
+<div class="mask">
+    <div class="wrap" id="jcropdiv">
+        <span class="title">头像设置</span>
+        <a class="quit" onclick="quit()"></a>
+        <div class="wl">
+            <div class="jc-demo-box" data="0">
+                <div id="target" class="jcrop_w">
+                    <img src="" id="origi-img"/>
+                </div>
+            </div>
+        </div>
+        <div class="wr" id="preview-pane">
+            <span class="headline">头像预览</span>
+            <div class="preview-container">
+                <div class="pre-2">
+                    <img src="" class="jcrop-preview jcrop_preview_s" id="big-img" alt=""/>
+                </div>
+                <span class="pre-help">大头像 100 * 100</span>
+                <div class="pre-3">
+                    <img src="" class="jcrop-preview jcrop_preview_s" id="small-img" alt=""/>
+                </div>
+                <span class="pre-help">小头像 55 * 55</span>
+            </div>
+        </div>
+        <div id="btn-area">
+            <button class="save-btn" id="save_btn">保存头像</button>
+            <input class="cancel-btn" type="button" value="选择图片" onclick="head_img.click()">
+            <input type="file" name="head_img" id="head_img" accept="image/*" style="display:none">
+            <input type="hidden" id="x1" name="x1"/>
+            <input type="hidden" id="y1" name="y1"/>
+            <input type="hidden" id="w" name="w"/>
+            <input type="hidden" id="h" name="h"/>
+            <input type="hidden" id="scale" name="scale"/>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.Jcrop.js"></script>
+<script type="text/javascript" src="assets/js/ajaxfileupload.js"></script>
+<script type="text/javascript" src="assets/js/basic.js"></script>
+</body>
+</html>

@@ -2,10 +2,10 @@
 <html>
 <head>
 	<title>vuejs练习</title>
-<script type="text/javascript" src="js/vue.js"></script>
-<script type="text/javascript" src="js/Example.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/Example.css"/>
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript" src="../js/Example.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/Example.css"/>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
 <style type="text/css">
   body {
     font-family: Helvetica Neue, Arial, sans-serif;
@@ -125,7 +125,7 @@ a:active  {color:yellow;}
         message: 'Hello Vue!'
       }
     })
- 
+
 </script>
 <script type="text/javascript">
   // register the grid component
