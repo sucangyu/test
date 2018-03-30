@@ -91,10 +91,9 @@ file直接提交存为不同大小规格的图片
 方法二
 file上传后经过截取后用PHP函数保存图片
 */
-var_dump($_POST);
-//die;
+
 if($_POST&&$_FILES['image']){
-	$size = 5*1024*1024;
+	$size = 10*1024*1024;
 	require_once "fileupload.class.php";
 	$up = new fileupload();  
     //设置属性（上传的位置、大小、类型、设置文件名是否要随机生成）  
