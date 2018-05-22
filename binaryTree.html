@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>二叉树算法(Binary Tree)--大炮小游戏</title>
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<style type="text/css">
+		#stage{width: 300px;height: 300px;position: relative;}
+		#backgroud{width: 300px;height: 300px;position: absolute;background-color: #000;top: 0px;left:0px;}
+		#cannon{width: 20px;height: 20px;position: absolute;top:270px;left: 140px;background-color: #fff;}
+		#alien{width: 20px;height: 20px;position: absolute;top:10px;left: 30px;background-color: red;}
+		#missile{width: 10px;height: 10px;position: absolute;top: 270px;left: 145px;background-color: #FF7F24;}
+		#die{width: 20px;height: 20px;position: absolute;top: 0px;left: 0px;background-color: #f5f5f5;display: none;}
+	</style>
+</head>
+<body>
+	<div id="stage">
+		<div id="backgroud"></div>
+		<div id="cannon"></div>
+		<div id="alien"></div>
+		<div id="missile"></div>
+		<div id="die"></div>
+	</div> <!-- <div id="stage"> -->
+	<p>输入0-300的x,y坐标</p>
+	<input type="number" name="inputX" id="inputX" max="300" min="0">
+	<input type="number" name="inputY" id="inputY" max="300" min="0">
+	<button id="fs" onclick="clickHandler()">发射</button>
+	<p>炮弹剩余数8</p>
+
+	<script type="text/javascript">
+		var alienY = 20;
+		var guessX = 0;
+		var guessY = 0; 
+		var shotsRemaning = 8;
+		var shotsMade = 0;
+		var gameState = "";
+		var gameWon = false;
+
+		var cannon = document.querySelector("#cannon");
+		var alien = document.querySelector("#alien");
+		var missile = document.querySelector("#missile");
+		var die = document.querySelector("#die");
+
+		
+		function playGame(argument) {
+			shotsRemaning = shotsRemaning - 1;
+			shotsMade = shotsMade + 1;
+			gameState = "炮弹剩余数:" + shotsRemaning;
+
+			guessX = parseInt($("#inputX").val());
+			guessY = parseInt($("#inputY").val());
+			var alienNode = binaryTree.search(guessX);
+			if (alienNode !== null && alienNode.selected === true) {
+				gameWon = true;
+				endGame();
+			}else{
+				alert("没有击中");
+				if (shotsRemaning<1) {
+					endGame();
+				}
+			}
+
+			if (!gameWon) {
+				nodesForAlien[alienNodeSelect].selected = false;
+				alienNodeSelect = Math.floor(Math.random()*9);
+				nodesForAlien[alienNodeSelect].selected = true;
+				alienX = nodesForAlien[alienNodeSelect].key;
+				alienY += 30;
+			}
+
+			render();
+			console.log("X:"+alienX);
+			console.log("Y:"+alienY);
+		}
+
+		function render(){
+			alien.style.left = alienX + "px";
+			alien.style.top = alienY + "px";
+
+			cannon.style.left = guessX + "px";
+
+			missile.style.left = guessX + "px";
+			missile.style.top = guessY + "px";
+
+			if (gameWon) {
+				die.style.display = "block";
+				die.style.left = alienX + "px";
+				die.style.top = alienY + "px";
+
+				alien.style.display = "none";
+				missile.style.display = "none";
+			}
+		}
+
+		function endGame(){
+			if (gameWon) {
+				alert("你拯救了地球,一共用了"+shotsMade+"枚炮弹.");
+			}else{
+				alert("地球拯救失败!");
+			}
+
+			$("#fs").attr('disabled',true);
+			$("#inputX").attr('disabled',true);
+			$("#inputY").attr('disabled',true);
+		}
+		//发射函数
+		function clickHandler(){
+			playGame();
+		}
+
+		function keydownHandler(){
+			playGame();
+		}
+
+		function binaryTree(){
+			var Node = function(key){
+				this.key  = key;
+				this.left = null;
+				this.right = null;
+			}
+			var root = null;
+
+			var insertNode = function(node,newNode){
+				if (newNode.key < node.key) {
+					if (node.left === null) {
+						node.left = newNode;
+					}else{
+						insertNode(node.left,newNode);
+					}
+				}else{
+					if (node.right===null) {
+						node.right = newNode;
+					}else{
+						insertNode(node.right,newNode);
+					}
+				}
+			}
+
+			this.insert = function(key){
+				var newNode = new Node(key);
+				if (root === null) {
+					root = newNode;
+				}else{
+					insertNode(root,newNode);
+				}
+			}
+
+
+			var inOrderTracerseNode = function(node,callback)
+			{
+				if (node!==null) {
+					inOrderTracerseNode(node.left,callback);
+					callback(node.key);
+					inOrderTracerseNode(node.right,callback);
+				}
+			}
+
+			var preOrderTracerseNode = function(node,callback)
+			{
+				if (node!==null) {
+					callback(node.key);
+					preOrderTracerseNode(node.left,callback);
+					preOrderTracerseNode(node.right,callback);
+				}
+			}
+
+			var postOrderTracerseNode = function(node,callback)
+			{
+				if (node!==null) {
+					postOrderTracerseNode(node.left,callback);
+					postOrderTracerseNode(node.right,callback);
+					callback(node.key);
+				}
+			}
+			//中序遍历
+			this.inOrderTracerse = function(callback){
+				inOrderTracerseNode(root,callback);//从根节点遍历
+			}
+			//前序遍历
+			this.preOrderTracerse = function(callback){
+				preOrderTracerseNode(root,callback);
+			}
+			//后序遍历
+			this.postOrderTracerse = function(callback){
+				postOrderTracerseNode(root,callback);
+			}
+
+			var minNode = function(node){
+				if (node) {
+					while (node && node.left !== null){
+						node = node.left;
+					}
+					return node.key;
+				}
+
+				return null;
+			}
+			var maxNode = function(node){
+				if (node) {
+					while (node && node.right !== null){
+						node = node.right;
+					}
+					return node.key;
+				}
+
+				return null;
+			}
+
+			var searchNode = function(node,key){
+				if (node===null) {
+					return false;
+				}
+
+				if (key<node.key) {
+					return searchNode(node.left,key);
+				}else if (key>node.key) {
+					return searchNode(node.right,key);
+				}else{
+					return true;
+				}
+			}
+
+			var findMinNode = function(node){
+				if (node) {
+					while (node && node.left !== null){
+						node = node.left;
+					}
+					return node;
+				}
+
+				return null;
+			}
+			var removeNode = function(node,key){
+				if (node===null) {
+					return null;
+				}
+
+				if (key<node.key) {
+					node.left =removeNode(node.left,key);
+					return node;
+				}else if (key>node.right) {
+					node.right =removeNode(node.right,key);
+					return node;
+				}else{
+					if (node.left===null&&node.right===null) {
+						node = null;
+						return node;
+					}
+					if (node.left===null) {
+						node = none.right;
+						return node;
+					}else if (node.right===null) {
+						node = none.left;
+						return node;
+					}
+
+					var aux = findMinNode(node.right);
+					node.key = aux.key;
+					node.right = removeNode(node.right,aux.key);
+					return node;
+				}
+			}
+
+			//当前最小节点查找
+			this.min = function(){
+				return minNode(root);
+			}
+			//当前最大节点查找
+			this.max = function(){
+				return maxNode(root);
+			}
+
+			//查找给定数值
+			this.search = function(key){
+				return searchNode(root,key);
+			}
+
+			//删除节点
+			this.remove = function(key){
+				return removeNode(root,key);
+			}
+		}
+
+		var nodes = [8,3,10,1,6,14,4,7,13];
+		var binaryTree = new binaryTree();
+		nodes.forEach(function(key){
+			binaryTree.insert(key);
+		});
+
+		var callback = function(key){
+			console.log(key);
+		}
+
+		console.log("min node is:"+binaryTree.min());
+		console.log(binaryTree.search(4)?"zai":"buzai");
+		// binaryTree.postOrderTracerse(callback);
+	</script>
+</body>
+</html>

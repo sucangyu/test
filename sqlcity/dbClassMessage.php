@@ -74,5 +74,5 @@ class dbClassManage
 	}
 }
 //$db = new dbClassManage('localhost','root','','dsshop');
-$db = dbClassManage::getIns('localhost','root','root','dsshop');
+$db = dbClassManage::getIns('localhost','root','root','test');
 ?>

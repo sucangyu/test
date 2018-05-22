@@ -30,5 +30,7 @@ $m_date5=array(
 $aa = serialize($m_date5);
 echo $aa.'<br/>';
 $ss = unserialize($aa);
-echo $ss['shop'];
+echo $ss['shop'].'<br/>';
+echo time().'<br/>';
+echo md5('aaaaaa').'<br/>';
 ?>
