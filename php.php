@@ -73,7 +73,7 @@ if (file_exists($filename)) {
 }
 
 echo '1:使用for循环、while循环和递归写出3个函数来计算给定数列的总和。<br/>';
-$arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+$arr = range(1,10,1);//step可选。规定元素之间的步进制。默认是 1。
 echo 'for循环'.getFor($arr).'<br/>';
 echo 'while循环'.getWhile($arr).'<br/>';
 echo '递归循环'.getDg(0,$arr).'<br/>';
@@ -121,7 +121,7 @@ function fbnq($n){
 $a=fbnq(20);//求斐波那契数列第20个数
 echo "斐波那契数列第20项为:".$a;
 echo '<br/>问题4:编写一个能将给定非负整数列表中的数字排列成最大数字的函数。例如，给定[50，2，1,9]，最大数字为95021。<br/>';
-$arr = [50,2,1,9];
+$arr = array(50,2,1,9);
 // function grtMax($arr){
 //     for ($i=0; $i < count($arr); $i++) { 
 
@@ -129,4 +129,19 @@ $arr = [50,2,1,9];
 //     return $str;
 // }
 // echo grtMax($arr);
+echo '<br/>range()函数:';
+print_r (range("A","Z"));
+echo '<br/>';
+$a = range(1,30);
+$b = array_chunk($a, 6);//函数把数组分割为新的数组块.其中每个数组的单元数目由 size 参数决定。最后一个数组的单元数目可能会少几个。
+echo 'array_chunk():'.print_r ($b);
+echo '<br/>';
+$c = call_user_func_array('array_map', array_merge(array(null), $b));
+echo '<br/>';
+echo 'array_merge():'.print_r (array_merge(array(null), $b));
+echo 'call_user_func_array():'.print_r ($c);
+echo '<br/>结果:';
+foreach($c as $v) echo join(' ', $v), '<br/>';
+
+
 ?>

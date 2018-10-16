@@ -33,4 +33,18 @@ if ($_POST){
         echo $data;
         die;
     }
+    //根据ip查询物理地址
+    if ($_POST['type']=='ipS'){
+        $ipString = $_POST['ipString'];
+        if(empty($ipString)){
+            $ipString = $_SERVER['REMOTE_ADDR'];//如果没有传进查询ip则查询客户端ip
+        }
+        $json = @file_get_contents("http://ip.taobao.com/service/getIpInfo.php?ip=".$ipString);
+//            $json = json_decode($json,true);
+        unset($_POST);
+        echo $json;
+        die;
+    }
+
+
 }

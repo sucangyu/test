@@ -1,30 +1,3 @@
-<?php
-function getIp()
-{
-    $IPaddress='';
-    if (isset($_SERVER)){
-        if (isset($_SERVER["HTTP_X_FORWARDED_FOR"])){
-            $IPaddress = $_SERVER["HTTP_X_FORWARDED_FOR"];
-        } else if (isset($_SERVER["HTTP_CLIENT_IP"])) {
-            $IPaddress = $_SERVER["HTTP_CLIENT_IP"];
-        } else {
-            $IPaddress = $_SERVER["REMOTE_ADDR"];
-        }
-    } else {
-        if (getenv("HTTP_X_FORWARDED_FOR")){
-            $IPaddress = getenv("HTTP_X_FORWARDED_FOR");
-        } else if (getenv("HTTP_CLIENT_IP")) {
-            $IPaddress = getenv("HTTP_CLIENT_IP");
-        } else {
-            $IPaddress = getenv("REMOTE_ADDR");
-        }
-    }
-    return $IPaddress;
-}
-$myIp =  getIp();//就可以输出用户的IP地址。
-
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,14 +24,37 @@ $myIp =  getIp();//就可以输出用户的IP地址。
         #upimg{width: auto;display: inline-block;}
         .right{border: 1px #bbbbbb solid;border-radius: 3px;padding: 3px;float: right;}
         .sp-ilk{display: inline-block;}
-        #form4 .img{font-size: 36px;padding: 5px;background: #00a65a;}
+        #form4 .img{font-size: 36px;padding:0px 10px;background: #00a65a;}
+        nav{width: 100%;height: 50px;border-bottom: 1px #bbbbbb solid;font-size: 16px;}
+        nav .nav-sp{display: inline-block;padding: 10px;line-height: 30px;}
+        nav .nav-sp:hover{cursor:pointer;}
+        nav .active{color: #00a65a;border-bottom: #00a65a solid 1px;}
+        .div-none{display: none;}
+        .div-show{display: block;}
+        #form5  button {font-size: 18px;font-weight: bold;width: 90px;}
     </style>
 </head>
 <body>
 
 <div class="container">
+    <nav>
+        <span class="nav-sp active" data-id="1">转md5</span>
+        <span class="nav-sp" data-id="2">unix时间戳互转</span>
+        <span class="nav-sp" data-id="3">base64文字和图片互转</span>
+        <span class="nav-sp" data-id="4">ip地址查询</span>
+        <span class="nav-sp" data-id="5">计算器</span>
+    </nav>
+    <script>
+        $(".nav-sp").click(function () {
+            var id = $(this).data("id");
+            $(".nav-sp").removeClass("active");
+            $(this).addClass("active");
+            $(".div-none").removeClass("div-show");
+            $("#form"+id).addClass("div-show");
+        });
+    </script>
 <!--    md5-->
-    <div id="form1">
+    <div class="div-none div-show" id="form1">
         <h2>转md5()</h2>
         <form class="form-inline" >
             <div class="form-group">
@@ -112,7 +108,7 @@ $myIp =  getIp();//就可以输出用户的IP地址。
         });
     </script>
 <!--    unix时间戳-->
-    <div id="form2">
+    <div class="div-none" id="form2">
         <h2>unix时间戳转换</h2>
         <div id="unix1" class="unixs">
             现在的Unix时间戳(Unix timestamp(毫秒))是：
@@ -183,7 +179,7 @@ $myIp =  getIp();//就可以输出用户的IP地址。
         });
     </script>
 <!--    base64文字和图片互转-->
-    <div id="form3">
+    <div class="div-none" id="form3">
         <h2>base64文字和图片互转</h2>
         <h4>字符编码</h4>
         <div id="base1" class="bases">
@@ -317,13 +313,435 @@ $myIp =  getIp();//就可以输出用户的IP地址。
         });
     </script>
 <!--    ip地址查询-->
-    <div id="form4">
+    <div class="div-none" id="form4">
         <h2>ip地址查询</h2>
         <div>
             <span class="sp-ilk img">IP</span>
-            <span class="sp-ilk">本机IP:<?php echo $myIp;?></span>
+            <span class="sp-ilk my-ipadd" ></span>
+        </div>
+        <div style="margin-top: 10px;">
+            <input type="text" id="op-ip-input">
+            <span id="cxip">查询</span>
+            <p id="show-ip"></p>
         </div>
     </div>
+    <script>
+        $(document).ready(function(){
+            // 更新商品价格
+            var ip = '115.199.215.46';//可以为空
+            ajaxIP(ip,0);
+        });
+        $("#cxip").click(function () {
+            $("#show-ip").html('');
+            var ip = $("#op-ip-input").val();
+            ajaxIP(ip,1);
+        });
+        function ajaxIP(ip,type) {
+            $.ajax({
+                type: 'POST',
+                url: "turnAjax.php",
+                data:{"ipString":ip,"type":'ipS'},
+                success: function(data){
+                    // console.log(data);
+                    var jnobj=JSON.parse(data);
+                    if (type==0){
+                        var html = "本机IP:"+jnobj.data.ip+"  "+jnobj.data.region+jnobj.data.city+"  "+jnobj.data.isp;
+                        $(".my-ipadd").html(html);
+                    } else{
+                        var html = jnobj.data.ip+"来自:"+jnobj.data.region+jnobj.data.city+"  "+jnobj.data.isp;
+                        $("#show-ip").html(html);
+                    }
+
+                },
+            });
+        };
+    </script>
+<!--    计算器-->
+    <div class="div-none" id="form5">
+        <h2>计算器</h2>
+        <table>
+            <tr>
+                <td colspan="4">
+                    <div id="jieguo"
+                         style="width: 370px;height: 30px;font-size: 30px;text-align: right;font-weight:bold;color: red;">0</div>
+                </td>
+            </tr>
+            <tr style="height: 40px;">
+                <td>
+                    <button id="cunChu">存储(F1)</button></td>
+                <td>
+                    <button id="quCun">取存(F2)</button></td>
+                <td>
+                    <button id="tuiGe">&nbsp;退&nbsp;格&nbsp;</button></td>
+                <td>
+                    <button id="qingPing">&nbsp;清&nbsp;屏&nbsp;</button></td>
+            </tr>
+            <tr style="height: 40px;">
+                <td>
+                    <button id="leiCun">累存(F3)</button></td>
+                <td>
+                    <button id="jiCun">积存(F4)</button></td>
+                <td>
+                    <button id="qingCun">清存(F6)</button></td>
+                <td>
+                    <button id="Chuyi" class="yunSuan" name="4">&nbsp;&nbsp;÷&nbsp;&nbsp;</button>
+                </td>
+            </tr>
+            <tr style="height: 40px;">
+                <td>
+                    <button id="seven" class="number" name="7">&nbsp;&nbsp;7&nbsp;&nbsp;</button>
+                </td>
+                <td>
+                    <button id="eight" class="number" name="8">&nbsp;&nbsp;8&nbsp;&nbsp;</button>
+                </td>
+                <td>
+                    <button id="nine" class="number" name="9">&nbsp;&nbsp;9&nbsp;&nbsp;</button>
+                </td>
+                <td>
+                    <button id="chengYi" class="yunSuan" name="3">&nbsp;&nbsp;×&nbsp;&nbsp;</button>
+                </td>
+            </tr>
+            <tr style="height: 40px;">
+                <td>
+                    <button id="four" class="number" name="4">&nbsp;&nbsp;4&nbsp;&nbsp;</button>
+                </td>
+                <td>
+                    <button id="five" class="number" name="5">&nbsp;&nbsp;5&nbsp;&nbsp;</button>
+                </td>
+                <td>
+                    <button id="six" class="number" name="6">&nbsp;&nbsp;6&nbsp;&nbsp;</button>
+                </td>
+                <td>
+                    <button id="jianQu" class="yunSuan" name="2">&nbsp;&nbsp;-&nbsp;&nbsp;</button>
+                </td>
+            </tr>
+            <tr style="height: 40px;">
+                <td>
+                    <button id="one" class="number" name="1">&nbsp;&nbsp;1&nbsp;&nbsp;</button>
+                </td>
+                <td>
+                    <button id="two" class="number" name="2">&nbsp;&nbsp;2&nbsp;&nbsp;</button>
+                </td>
+                <td>
+                    <button id="three" class="number" name="3">&nbsp;&nbsp;3&nbsp;&nbsp;</button>
+                </td>
+                <td>
+                    <button id="jiaShang" class="yunSuan" name="1">&nbsp;&nbsp;+&nbsp;&nbsp;</button>
+                </td>
+            </tr>
+            <tr style="height: 40px;">
+                <td>
+                    <button id="zero" class="number" name="0">&nbsp;&nbsp;0&nbsp;&nbsp;</button>
+                </td>
+                <td>
+                    <button id="dian" class="number" name=".">&nbsp;&nbsp;.&nbsp;&nbsp;</button>
+                </td>
+                <td>
+                    <button id="zhengFu" class="number" name="-1">&nbsp;&nbsp;+/-&nbsp;&nbsp;</button>
+                </td>
+                <td>
+                    <button id="dengYu">&nbsp;&nbsp;=&nbsp;&nbsp;</button></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var yunSuan = 0;// 运算符号，0-无运算;1-加法;2-减法;3-乘法;4-除法
+        var change = 0;// 属于运算符后需要清空上一数值
+        var num1 = 0;// 运算第一个数据
+        var num2 = 0;// 运算第二个数据
+        var cunChuValue = 0;// 存储的数值
+        $(function() {
+            // 点击数字触发事件
+            $(".number").click(function() {
+                var num = $(this).attr('name');
+                var oldValue = $("#jieguo").html();
+                if (change == 1) {
+                    oldValue = "0";
+                    change = 0;
+                }
+                var newValue = "";
+                if (num == -1) {
+                    oldValue = parseFloat(oldValue);
+                    newValue = oldValue * -1;
+                } else if (num == ".") {
+                    if (oldValue.indexOf('.') == -1)
+                        newValue = oldValue + ".";
+                    else
+                        newValue = oldValue;
+                } else {
+                    if (oldValue == 0 && oldValue.indexOf('.') == -1) {
+                        newValue = num;
+                    } else {
+                        newValue = oldValue + num;
+                    }
+                }
+                $("#jieguo").html(newValue);
+            });
+            // 点击清屏触发事件
+            $("#qingPing").click(function() {
+                $("#jieguo").html("0");
+                yunSuan = 0;
+                change = 0;
+                num1 = 0;
+                num2 = 0;
+            });
+            // 点击退格触发事件
+            $("#tuiGe").click(function() {
+                if (change == 1) {
+                    yunSuan = 0;
+                    change = 0;
+                }
+                var value = $("#jieguo").html();
+                if (value.length == 1) {
+                    $("#jieguo").html("0");
+                } else {
+                    value = value.substr(0, value.length - 1);
+                    $("#jieguo").html(value);
+                }
+            });
+            // 点击运算符号触发事件
+            $(".yunSuan").click(function() {
+                change = 1;
+                yuSuan = $(this).attr('name');
+                var value = $("#jieguo").html();
+                var dianIndex = value.indexOf(".");
+                if (dianIndex == value.length) {
+                    value = value.substr(0, value.length - 1);
+                }
+                num1 = parseFloat(value);
+            });
+            // 点击等于符号触发事件
+            $("#dengYu").click(function() {
+                var value = $("#jieguo").html();
+                var dianIndex = value.indexOf(".");
+                if (dianIndex == value.length) {
+                    value = value.substr(0, value.length - 1);
+                }
+                num2 = parseFloat(value);
+                var sum = 0;
+                if (yuSuan == 1) {
+                    sum = num1 + num2;
+                } else if (yuSuan == 2) {
+                    sum = num1 - num2;
+                } else if (yuSuan == 3) {
+                    sum = num1 * num2;
+                } else if (yuSuan == 4) {
+                    sum = num1 / num2;
+                } else if (yuSuan == 0 || num1 == 0 || num2 == 0) {
+                    sum = num1 + num2;
+                }
+                var re = /^[0-9]+.?[0-9]*$/;
+                if (re.test(sum)) {
+                    sum = sum.toFixed(2);
+                }
+                $("#jieguo").html(sum);
+                change = 1;
+                yuSuan = 0;
+                num1 = 0;
+                num2 = 0;
+            });
+            // 点击存储触发事件
+            $("#cunChu").click(function() {
+                change = 1;
+                var value = $("#jieguo").html();
+                var dianIndex = value.indexOf(".");
+                if (dianIndex == value.length) {
+                    value = value.substr(0, value.length - 1);
+                }
+                cunChuValue = parseFloat(value);
+            });
+            // 点击取存触发事件
+            $("#quCun").click(function() {
+                change = 1;
+                $("#jieguo").html(cunChuValue);
+            });
+            // 点击清存触发事件
+            $("#qingCun").click(function() {
+                change = 1;
+                cunChuValue = 0;
+            });
+            // 点击累存触发事件
+            $("#leiCun").click(function() {
+                change = 1;
+                var value = $("#jieguo").html();
+                var dianIndex = value.indexOf(".");
+                if (dianIndex == value.length) {
+                    value = value.substr(0, value.length - 1);
+                }
+                cunChuValue += parseFloat(value);
+            });
+            // 点击积存触发事件
+            $("#jiCun").click(function() {
+                change = 1;
+                var value = $("#jieguo").html();
+                var dianIndex = value.indexOf(".");
+                if (dianIndex == value.length) {
+                    value = value.substr(0, value.length - 1);
+                }
+                if (cunChuValue == 0) {
+                    cunChuValue = parseFloat(value);
+                } else {
+                    cunChuValue = cunChuValue * parseFloat(value);
+                }
+            });
+        });
+
+        // 按键监听
+        $(document)
+            .keydown(
+                function(event) {
+                    // 数字监听
+                    if (((event.keyCode > 47 && event.keyCode < 58)
+                        || (event.keyCode > 95 && event.keyCode < 106) || (event.keyCode == 190 || event.keyCode == 110))
+                        && !event.shiftKey) {
+                        keyDownNum(event.keyCode);
+                    }
+                    // "+"监听
+                    if ((event.keyCode == 187 && event.shiftKey)
+                        || event.keyCode == 107) {
+                        keyDownYuSuan(1);
+                    }
+                    // "-"监听
+                    if ((event.keyCode == 189 && event.shiftKey)
+                        || event.keyCode == 109) {
+                        keyDownYuSuan(2);
+                    }
+                    // "*"监听
+                    if ((event.keyCode == 56 && event.shiftKey)
+                        || event.keyCode == 106) {
+                        keyDownYuSuan(3);
+                    }
+                    // "/"监听
+                    if (event.keyCode == 191 || event.keyCode == 111) {
+                        keyDownYuSuan(4);
+                    }
+                    // "="监听
+                    if ((event.keyCode == 187 && !event.shiftKey)
+                        || event.keyCode == 13 || event.keyCode == 108) {
+                        $("#dengYu").click();
+                    }
+
+                    // "回退"监听
+                    if (event.keyCode == 8) {
+                        $("#tuiGe").click();
+                        return false;
+                    }
+
+                    // "清屏"监听
+                    if (event.keyCode == 27 || event.keyCode == 46
+                        || (event.keyCode == 110 && event.shiftKey)) {
+                        $("#qingPing").click();
+                        return false;
+                    }
+
+                    // "存储"监听
+                    if (event.keyCode == 112) {
+                        $("#cunChu").click();
+                        return false;
+                    }
+
+                    // "取存"监听
+                    if (event.keyCode == 113) {
+                        $("#quCun").click();
+                        return false;
+                    }
+
+                    // "累存"监听
+                    if (event.keyCode == 114) {
+                        $("#leiCun").click();
+                        return false;
+                    }
+
+                    // "积存"监听
+                    if (event.keyCode == 115) {
+                        $("#jiCun").click();
+                        return false;
+                    }
+
+                    // "清存"监听
+                    if (event.keyCode == 117) {
+                        $("#qingCun").click();
+                        return false;
+                    }
+                });
+
+        /**
+         * 按键触发运算符 value 1-'+' 2-'-' 3-'*' 4-'/'
+         */
+        function keyDownYuSuan(value) {
+            change = 1;
+            yuSuan = value;
+            var value = $("#jieguo").html();
+            var dianIndex = value.indexOf(".");
+            if (dianIndex == value.length) {
+                value = value.substr(0, value.length - 1);
+            }
+            num1 = parseFloat(value);
+        }
+
+        /**
+         * 按键触发数字 code ASCLL码
+         */
+        function keyDownNum(code) {
+            var number = 0;
+            if (code == 48 || code == 96) {// "0"监听
+                number = 0;
+            }
+            if (code == 49 || code == 97) {// "1"监听
+                number = 1;
+            }
+            if (code == 50 || code == 98) {// "2"监听
+                number = 2;
+            }
+            if (code == 51 || code == 99) {// "3"监听
+                number = 3;
+            }
+            if (code == 52 || code == 100) {// "4"监听
+                number = 4;
+            }
+            if (code == 53 || code == 101) {// "5"监听
+                number = 5;
+            }
+            if (code == 54 || code == 102) {// "6"监听
+                number = 6;
+            }
+            if (code == 55 || code == 103) {// "7"监听
+                number = 7;
+            }
+            if (code == 56 || code == 104) {// "8"监听
+                number = 8;
+            }
+            if (code == 57 || code == 105) {// "9"监听
+                number = 9;
+            }
+            if (code == 190 || code == 110) {// "."监听
+                number = ".";
+            }
+            var num = number;
+            var oldValue = $("#jieguo").html();
+            if (change == 1) {
+                oldValue = "0";
+                change = 0;
+            }
+            var newValue = "";
+            if (num == -1) {
+                oldValue = parseFloat(oldValue);
+                newValue = oldValue * -1;
+            } else if (num == ".") {
+                if (oldValue.indexOf('.') == -1)
+                    newValue = oldValue + ".";
+                else
+                    newValue = oldValue;
+            } else {
+                if (oldValue == 0 && oldValue.indexOf('.') == -1) {
+                    newValue = num;
+                } else {
+                    newValue = oldValue + num;
+                }
+            }
+            $("#jieguo").html(newValue);
+        }
+    </script>
 </div>
 <div style="width: 100%;height: 60px;"></div>
 </body>
