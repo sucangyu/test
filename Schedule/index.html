@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>jQuery步骤进度条控制代码(五日签到)</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<!--<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">-->
+	<link rel="stylesheet" type="text/css" href="css/jquery.step.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.step.js"></script>
+
+<script>
+
+    $(function() {
+
+        var step= $("#myStep").step();
+        //
+        var qdDayNum = {$inDay['nums']};
+        if (qdDayNum>5) {
+            qdDayNum =  5;
+        }
+        if (qdDayNum>0){
+            for (var dn=0;dn<qdDayNum;dn++) {
+                step.nextStep();
+            }
+        }
+        $(".qiandao").click(function () {
+            $.ajax({
+                type : "post",
+                url:"{:U('daSignIn')}",
+                // data:{"page":page,'gkd':gkd},
+                dataType:'json',
+                success: function(data)
+                {
+                    var sumYd = parseFloat({$sumYd});
+                    // console.log(data);
+                    if (data.type==1){
+                        step.nextStep();
+                        $(".qiandao").addClass("acv");
+                        $(".qiandao").html('已签到');
+                        $(".inDayYd").html(data.data);
+                        $(".sumYd").html(sumYd+parseFloat(data.data));
+                    }
+                    layer.msg(data.msg, {
+                        area: ['80%', '80px'],
+                        offset:'20%',
+                        shift: 1
+                    });
+                }
+            });
+        });
+    });
+
+    (function (factory) {
+        "use strict";
+        if (typeof define === 'function') {
+            // using CMD; register as anon module
+            define.cmd&&define('jquery-step', ['jquery'], function (require, exports, moudles) {
+                var $=require("jquery");
+                factory($);
+                return $;
+            });
+            define.amd&&define(['jquery'], factory);
+        } else {
+            // no CMD; invoke directly
+            factory( (typeof(jQuery) != 'undefined') ? jQuery : window.Zepto );
+        }
+    }
+
+    (function($){
+        $.fn.step = function(options) {
+            var opts = $.extend({}, $.fn.step.defaults, options);
+            var size=this.find(".step-header li").length;
+            var barWidth=opts.initStep<size?100/(2*size)+100*(opts.initStep-1)/size : 100;
+            var curPage=opts.initStep;
+
+            this.find(".step-header").prepend("<div class=\"step-bar\"><div class=\"step-bar-active\"></div></div>");
+            this.find(".step-list").eq(opts.initStep-1).show();
+            if (size<opts.initStep) {
+                opts.initStep=size;
+            }
+            if (opts.animate==false) {
+                opts.speed=0;
+            }
+            this.find(".step-header li").each(function (i, li) {
+                if (i<opts.initStep){
+                    $(li).addClass("step-active");
+                }
+                //$(li).prepend("<span>"+(i+1)+"</span>");
+                // $(li).append("<span class='icon-star'>"+(i+1)+"</span>");
+                $(li).append("<span class='icon-star'></span>");
+            });
+            this.find(".step-header li").css({
+                "width": 100/size+"%"
+            });
+            this.find(".step-header").show();
+            this.find(".step-bar-active").animate({
+                    "width": barWidth+"%"},
+                opts.speed, function() {
+
+                });
+
+            this.nextStep=function() {
+                if (curPage>=size) {
+                    return false;
+                }
+                return this.goStep(curPage+1);
+            }
+
+            this.preStep=function() {
+                if (curPage<=1) {
+                    return false;
+                }
+                return this.goStep(curPage-1);
+            }
+
+            this.goStep=function(page) {
+                if (page ==undefined || isNaN(page) || page<0) {
+                    if(window.console&&window.console.error){
+                        console.error('the method goStep has a error,page:'+page);
+                    }
+                    return false;
+                }
+                curPage=page;
+                this.find(".step-list").hide();
+                this.find(".step-list").eq(curPage-1).show();
+                this.find(".step-header li").each(function (i, li) {
+                    $li=$(li);
+                    $li.removeClass('step-active');
+                    if (i<page){
+                        $li.addClass('step-active');
+                        if(opts.scrollTop){
+                            $('html,body').animate({scrollTop:0}, 'slow');
+                        }
+                    }
+                });
+                barWidth=page<size?100/(2*size)+100*(page-1)/size : 100;
+                this.find(".step-bar-active").animate({
+                        "width": barWidth+"%"},
+                    opts.speed, function() {
+
+                    });
+                return true;
+            }
+            return this;
+        };
+
+        $.fn.step.defaults = {
+            animate:true,
+            speed:500,
+            initStep:0,
+            scrollTop:true
+        };
+
+    }));
+
+</script>
+<style>
+    .header{padding-top: 0px;}
+    .stepCont22{width: 100%;padding: 15px 0px;overflow: auto;background: #b2dba1;}
+    .qd-top{display: inline-block;}
+    .qd-text{width: 60%}
+    .qd-btn{width: 30%}
+    .qiandao{display: inline-block;padding: 5px 8px;line-height: 20px;font-size: 16px;background: #fdd700   ;color: #fff;border-radius: 5px;float: right;border: 0px;}
+    .acv{background: #eee;}
+</style>
+</head>
+<body>
+	<div class="stepCont22">
+    <div>
+        <div class="qd-top qd-text">
+            <p style="color: #fff;font-size: 1.6rem;margin-left: 12%;">今日获得蚁豆奖励 :&nbsp;&nbsp;<strong class="inDayYd">{$inDayYd['tmoney']}</strong></p>
+            <p style="color: #fff;font-size: 1.6rem;margin-left: 12%;">累计获得蚁豆奖励 :&nbsp;&nbsp;<strong class="sumYd">{$sumYd}</strong></p>
+        </div>
+        <div class="qd-top qd-btn">
+
+                <gt name="inDayYd['tmoney']">
+                    <button class="qiandao acv">
+                        已签到
+                    </button>
+                    <else />
+                    <button class="qiandao">
+                        签到
+                    </button>
+                </gt>
+
+        </div>
+    </div>
+
+    <div class="step-body" id="myStep">
+        <div class="step-header" style="width:80%">
+            <ul>
+                <li><p>第一天</p></li>
+                <li><p>第二天</p></li>
+                <li><p>第三天</p></li>
+                <li><p>第四天</p></li>
+                <li><p>第五天</p></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

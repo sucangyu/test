@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>疯狂管道鸟--纯JS小游戏</title>
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
+    <script type="text/javascript" src="../JQhuadong/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
+    <style>
+
+    </style>
+    <script>
+        //判断碰撞：
+        var BridOffsetTop= $(".Brid").offsetTop;
+        var BridOffsetHeight= $(".Brid").offsetHeight;
+        var BridOffsetLeft= $(".Brid").offsetLeft;
+        var BridOffsetWidth= $(".Brid").offsetWidth;
+        if(BridOffsetTop + BridOffsetHeight >= conduit.offsetTop && BridOffsetTop <= conduit.offsetTop + conduit.offsetHeight && BridOffsetLeft + BridOffsetWidth >= conduit.offsetLeft && BridOffsetLeft <= conduit.offsetLeft + conduit.offsetWidth)
+        {
+            gameover(); // 执行游戏结束
+        }
+        //记分：
+        if(conduit.offsetLeft + conduit.offsetWidth == 70)
+        {number++;}
+        //记分函数向下取整
+        function jiFen() {
+            $("#bigScore").innerHTML = "";
+            var scoreStr = Math.floor(number / 2).toString(); // 向下取整数的操作
+            for (var i = 0; i < scoreStr.length; i++) {
+                $("#bigScore").innerHTML += "<img src='img/"+ scoreStr[i] +".jpg'>";
+            }
+        }
+        // 定义小鸟飞起来，模仿自由落体。
+        // 定义小鸟飞起来的代码
+        var speedY = 0.1;
+        var imgindex = 0;
+        function AbridMove(Brid) {
+            function fly() {
+                speedY = speedY + 0.5;
+                Brid.style.top = Brid.offsetTop + speedY + "px"; // 模仿自由落体
+
+                // 煽动翅膀
+                Brid.style.background = "url(" + Arr[imgindex++] + ") " + "no-repeat";
+                if (imgindex == 2) {
+                    imgindex = 0;
+                }
+
+                // 碰撞到游戏界面边缘
+                if (Brid.offsetTop + Brid.offsetHeight >= 422 || Brid.offsetTop < 0) {
+                    gameover(); // 执行游戏结束的函数
+                }
+            }
+
+            time2 = setInterval(fly, 30);
+
+            // 点击键盘空格键，让小鸟向上飞
+            document.onkeydown = function (ev) {
+                var e = ev || event; // 整合浏览器的兼容性
+                if (e.keyCode == 32) {
+                    speedY = -8;
+                }
+            }
+        }
+        //鼠标点击事件
+        document.onclick = function() {
+            speedY = -8;
+        }
+        //游戏结束函数
+        function gameover() {
+            // 第一个步骤：显示最终的得分
+            $(".number").innerHTML = Math.floor(number / 2); // 显示游戏最终得分
+            // H5的存储的技术
+            if(window.localStorage.getItem("history") > Math.floor(number / 2)) {
+                $(".HistoryNumber").innerHTML = window.localStorage.getItem("history");
+            } else {
+                window.localStorage.setItem("history", Math.floor(number / 2)); // 重新设置历史最高分
+                $("HistoryNumber").innerHTML = Math.floor(number / 2);
+            }
+            $("#gameover").style.display = "block"; // 显示积分牌
+            // 清除所有的定时器
+            for (var i = 0; i < 1000; i++) {
+                clearInterval(i);
+            }
+        }
+        //重新开始游戏：
+        $(".ok").onclick = function() {
+            number = 0; // 游戏结束的时候分数要清零
+            $("#gameover").style.display = "none"; // 隐藏了记分牌
+            $("#start").style.display = "none"; // 开始游戏的过程
+            $("#BG").innerHTML = ""; // 清除上一次游戏的所有界面元素
+            startganme(); // 开始游戏
+        }
+        //
+        var t
+        function startganme() {
+            t=setInterval(AbridMove(),1000)
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="endShow">
+        <div class="userInfo">
+            <p>name</p>
+            <img src="" title="头像">
+        </div>
+        <div class="gameInfo">
+            <div class="gameCurrent">
+                <p>当前积分</p>
+                <p>0</p>
+            </div>
+            <div class="gameHistory">
+                <p>历史最佳</p>
+                <p>6</p>
+            </div>
+        </div>
+    </div>
+    <div class="btnStart"></div>
+</div>
+</body>
+</html>
