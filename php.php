@@ -144,4 +144,11 @@ echo '<br/>结果:';
 foreach($c as $v) echo join(' ', $v), '<br/>';
 
 
+echo '<br/>PHP 计算2的N次方可以使用PHP自带的函数';
+echo '<br/>1:  pow(2,4)  ';
+var_dump(pow(2,4));
+echo '<br/>2:  1<<$n  ';
+$n=4;
+var_dump(3<<$n);
+
 ?>

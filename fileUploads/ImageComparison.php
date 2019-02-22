@@ -1,6 +1,7 @@
 <?php
 /*图片搜索*/
 if ($_FILES['pic']) {
+	var_dump($_FILES['pic']);
 	$size = 10*1024*1024;
 	require_once "fileupload.class.php";
 	$up = new fileupload();  
@@ -41,6 +42,8 @@ if ($_FILES['pic']) {
 		}
 	    
 	}
+	$_FILES['pic'] = "";
+	var_dump($_FILES['pic']);
 }
 
 

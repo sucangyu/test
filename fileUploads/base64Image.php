@@ -85,12 +85,12 @@
                                 data: { img: touxiang},//base64数据
                                 dataType: "json",
                                 success: function (data) {
-                                    //console.log(data);
+                                    console.log(data);
                                     layer.closeAll();
                                     $("#img1").attr("src",data.url);
                                 },error:function(data){
                                     
-                                    //console.log(data);
+                                    console.log(data);
                                     layer.open({
                                         content: '图片上传失败！',
                                         time: 1.5
