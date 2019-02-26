@@ -58,6 +58,30 @@ body{
       &:last-child{
         border-right-width: 2px;
       }
+      &.fixed{
+        background: #eee;
+      }
+      &.empty{
+        color:#fff;
+      }
+      &.error{
+        background: #e4b9c0;
+        &.empty{
+          color: #e4b9c0;
+        }
+      }
+      &.mark1{
+        background: #00b786;
+        &.empty{
+          color: #00b786;
+        }
+      }
+      &.mark2{
+        background: #89d7ff;
+        &.empty{
+          color: #89d7ff;
+        }
+      }
     }
 
     &.row_g_bottom{
@@ -75,7 +99,22 @@ body{
         border-bottom-width: 2px;
       }
     }
+
   }
+}
+
+@popupCellSize:40px;
+.popup-num{
+  .container();
+  position: absolute;
+  .row{
+    >span{
+      width: @popupCellSize;
+      height: @popupCellSize;
+      line-height: @popupCellSize;
+    }
+  }
+
 }
 
 .dashboard{
