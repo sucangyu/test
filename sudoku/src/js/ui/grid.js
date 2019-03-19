@@ -1,6 +1,6 @@
 //生成九宫格
 const Toolkit = require("../core/toolkit");
-// const Generator = require("../core/generator");
+const Generator1 = require("../core/generator1");
 const Sudoku = require("../core/sudoku");
 const Checker = require("../core/checker");
 
@@ -28,14 +28,14 @@ class Grid{
                 .addClass(colGroupClasses[colIndex % 3])
                 .addClass(cellValue ? "fixed" : "empty")
                 .text(cellValue);
-    }));
+        }));
 
         const $divArray = $cells.map(($spanArray,rowIndex) => {
             return $("<div>")
                 .addClass("row")
                 .addClass(rowGroupClasses[rowIndex % 3])
                 .append($spanArray);
-    });
+        });
 
         this._$container.append($divArray);
     }
@@ -109,6 +109,7 @@ class Grid{
             }
         });
     }
+
 }
 
 module.exports = Grid;

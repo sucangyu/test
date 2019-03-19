@@ -2,7 +2,8 @@ const path = require("path");
 module.exports = {
     mode:'production',
     entry:{
-        index:"./js/index"
+        index:"./js/index",
+        unlock:"./js/unlock"
     },
     output:{
         filename:"[name].js"
