@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "babel-loader": "^8.0.5",
+    "extend": "^3.0.2",
     "weui": "^1.1.1"
   },
   "devDependencies": {},
