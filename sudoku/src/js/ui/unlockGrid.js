@@ -20,14 +20,14 @@ class unlockGrid{
                 .addClass(colGroupClasses[colIndex % 3])
                 .addClass(cellValue ? "fixed" : "empty")
                 .text(cellValue);
-    }));
+            }));
 
         const $divArray = $cells.map(($spanArray,rowIndex) => {
             return $("<div>")
                 .addClass("row")
                 .addClass(rowGroupClasses[rowIndex % 3])
                 .append($spanArray);
-    });
+        });
 
         this._$container.append($divArray);
     }
@@ -66,7 +66,6 @@ class unlockGrid{
             .toArray()
             .map($data=>$data.toArray());
         // console.log(data);
-
         //解密
         const generator1 = new Generator1();
         generator1.internalGenerate(data);

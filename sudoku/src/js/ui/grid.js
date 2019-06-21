@@ -1,6 +1,6 @@
 //生成九宫格
 const Toolkit = require("../core/toolkit");
-const Generator1 = require("../core/generator1");
+const Generator = require("../core/generator");
 const Sudoku = require("../core/sudoku");
 const Checker = require("../core/checker");
 
