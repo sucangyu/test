@@ -69,8 +69,8 @@ class unlockGrid{
         //解密
         const generator1 = new Generator1();
         generator1.internalGenerate(data);
-        const matrix1 = generator1.matrix;
-        console.log(matrix1);
+        const start = generator1.start();
+        console.log(start);
     }
     //重建刷新
     unRebuild(){
