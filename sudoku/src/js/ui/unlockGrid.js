@@ -70,7 +70,29 @@ class unlockGrid{
         const generator1 = new Generator1();
         generator1.internalGenerate(data);
         const start = generator1.start();
-        console.log(start);
+        // console.log(start);
+        this._$container.empty();//清除原有内容
+        //重新把得出的结果放入新盘中
+        const rowGroupClasses = ["row_g_top","row_g_middle","row_g_bottom"];
+        const colGroupClasses = ["col_g_left","col_g_center","col_g_right"];
+
+        const $cells = start.map(rowValues => rowValues
+            .map((cellValue,colIndex) => {
+            return $("<span>")
+                .addClass(colGroupClasses[colIndex % 3])
+                .addClass(cellValue ? "fixed" : "empty")
+                .text(cellValue);
+            }));
+
+        const $divArray = $cells.map(($spanArray,rowIndex) => {
+            return $("<div>")
+                .addClass("row")
+                .addClass(rowGroupClasses[rowIndex % 3])
+                .append($spanArray);
+            });
+
+        this._$container.append($divArray);
+        this.layout();//添加span样式
     }
     //重建刷新
     unRebuild(){
