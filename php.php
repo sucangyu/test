@@ -150,5 +150,60 @@ var_dump(pow(2,4));
 echo '<br/>2:  1<<$n  ';
 $n=4;
 var_dump(3<<$n);
-
+echo '<br/>pow(1,18);';
+echo pow(10,18);
+echo '<br/>';
+$src = date("Y.m.d");
+echo str_replace('.', '', date("Y.m.d"));
+echo '<br/>';
+//随机整型利用“不同”就有顺序的原理，
+function randomDivInt($pnum,$tmoney){
+    $remain=$tmoney;
+    $max_sum=($pnum-1)*$pnum/2;
+    $p=$pnum; $min=0.01;
+    $a=array();
+    for($i=0; $i<$pnum-1; $i++){
+        $max=($remain-$max_sum)/($pnum-$i);
+        $e=rand($min,$max);    
+        $min=$e+1; $max_sum-=--$p;
+        $remain-=$e;
+        $a[$e]=true;
+    }
+    $a=array_keys($a);
+    $a[]=$remain;
+    return $a;
+}
+ 
+ 
+/*for($i=0; $i<3; $i++){
+    $a=randomDivInt(5,100);
+    var_dump($a);//$a中便是分的不等数
+    var_dump(array_sum($a));
+    echo '<br>';
+}*/
+echo '~~~~~~~~~<br/>';
+$money_total=50.003;
+$personal_num=3;
+$zdz = 200;
+$min_money=0.01;
+$money_right=$money_total;
+$randMoney=array();
+for($i=1;$i<=$personal_num;$i++){
+    if($i== $personal_num){
+        $money=$money_right;
+    }else{
+        // $max=$money_right*100 - ($personal_num - $i ) * $min_money *100;
+        $aa = ($money_right/($personal_num-$i+1))*2*100;
+        $max=min($zdz*100,$aa);
+        $money= rand($min_money*100,$max) /100;
+        $money=sprintf("%.2f",$money);
+        $bb = max(0,$money_right - $money-$zdz*($personal_num-$i));
+        $money = $money+$bb;
+    }
+    $randMoney[]=$money;
+    $money_right=$money_right - $money;
+    $money_right=sprintf("%.2f",$money_right);
+}
+// shuffle($randMoney);
+var_dump($randMoney);
 ?>

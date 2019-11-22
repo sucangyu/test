@@ -6,6 +6,7 @@
   "dependencies": {
     "babel-loader": "^8.0.5",
     "extend": "^3.0.2",
+    "layui-src": "^2.5.4",
     "weui": "^1.1.1"
   },
   "devDependencies": {},
