@@ -2,20 +2,121 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 	<title>高德地图引用</title>
 	<style type="text/css">
-		body{width: 100%;height: 100%;margin: 0 auto;}
+		body{width: 100%;height: 100vh;margin: 0 auto;}
+		#container{
+			width: 100%;
+			height: 100vh;
+		}
+		.input-item{
+			height: 2.2rem;
+		}
+		.btn{
+			width: 6rem;
+			margin: 0 1rem 0 2rem;
+		}
+		.input-text{
+			width: 4rem;
+			margin-right:1rem;
+		}
 	</style>
 </head>
 <body>
-	<div id="map" style="width: 100%;height: 100%;"></div>
-	<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.4&key=您申请的key值""></script>
+	<div id="container" style="width: 100%;height: 100%;"></div>
+
+	<div class="input-card" style='width: 24rem;'>
+		<div class="input-item">
+			<input type="radio" name='func' checked="" value='marker'><span class="input-text">画点</span>
+			<input type="radio" name='func' value='polyline'><span class="input-text">画折线</span>
+			<input type="radio" name='func' value='polygon'><span class="input-text" style='width:5rem;'>画多边形</span>
+		</div>
+		<div class="input-item">
+			<input type="radio" name='func' value='rectangle'><span class="input-text">画矩形</span>
+			<input type="radio" name='func' value='circle'><span class="input-text">画圆</span>
+		</div>
+		<div class="input-item">
+			<input id="clear" type="button" class="btn" value="清除" />
+			<input id="close" type="button" class="btn" value="关闭绘图" />
+		</div>
+	</div>
+	<script type="text/javascript" src="../jquery.min.js"></script>
+	<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=9a4263de90cf460b30623e128650f5c4&plugin=AMap.MouseTool"></script>
 	<script type="text/javascript">
+		// var map = new AMap.Map('container');
 		var map = new AMap.Map('container', {
-	        resizeEnable: true,
-	        zoom:11,
-	        center: [116.397428, 39.90923]
+			pitch:75, // 地图俯仰角度，有效范围 0 度- 83 度
+			viewMode:'3D' // 地图模式
 	    });
+		var mouseTool = new AMap.MouseTool(map);
+		//监听draw事件可获取画好的覆盖物
+		var overlays = [];
+		mouseTool.on('draw',function(e){
+			overlays.push(e.obj);
+			console.log(e);
+		})
+
+		function draw(type){
+			switch(type){
+				case 'marker':{
+					mouseTool.marker({
+						//同Marker的Option设置
+					});
+					break;
+				}
+				case 'polyline':{
+					mouseTool.polyline({
+						strokeColor:'#80d8ff'
+						//同Polyline的Option设置
+					});
+					break;
+				}
+				case 'polygon':{
+					mouseTool.polygon({
+						fillColor:'#00b0ff',
+						strokeColor:'#80d8ff'
+						//同Polygon的Option设置
+					});
+					break;
+				}
+				case 'rectangle':{
+					mouseTool.rectangle({
+						fillColor:'#00b0ff',
+						strokeColor:'#80d8ff'
+						//同Polygon的Option设置
+					});
+					break;
+				}
+				case 'circle':{
+					mouseTool.circle({
+						fillColor:'#00b0ff',
+						strokeColor:'#80d8ff'
+						//同Circle的Option设置
+					});
+					break;
+				}
+			}
+		}
+		var radios = document.getElementsByName('func');
+		for(var i=0;i<radios.length;i+=1){
+			radios[i].onchange = function(e){
+
+				draw(e.target.value)
+			}
+		}
+		draw('marker')
+
+		document.getElementById('clear').onclick = function(){
+			map.remove(overlays)
+			overlays = [];
+		}
+		document.getElementById('close').onclick = function(){
+			mouseTool.close(true)//关闭，并清除覆盖物
+			for(var i=0;i<radios.length;i+=1){
+				radios[i].checked = false;
+			}
+		}
 	</script>
 </body>
 </html>

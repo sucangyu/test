@@ -1,0 +1,137 @@
+public function getSolveQuestionList()
+    {
+        if ($this->request->isPost()) {
+            $data     = $this->request->param();
+            $page     = $data['page'];
+            $pageSize = $data['pageSize'];
+            $admin    = $this->getCurrentUserId();
+            $where    = [
+                ["ps_ge_question_flow.admin_id", "=", $admin],
+                ['ps_ge_question_flow.delete_time', '=', 0],
+                ['ps_ge_question_flow.status', 'in', self::SOLVE_STATUS_ARRAY],
+                ['ps_ge_question.type','=',1]
+            ];
+            $count    = Db::table("ps_ge_question_flow")
+                ->leftJoin("ps_ge_question", "ps_ge_question_flow.question_id = ps_ge_question.id")
+                ->where($where)
+                ->count();
+            // 注意这里要还需要question_flow的id
+            $pageList = Db::table("ps_ge_question_flow")
+                ->leftJoin("ps_ge_question", "ps_ge_question_flow.question_id = ps_ge_question.id")
+                ->leftJoin("ps_ge_question_type", "ps_ge_question_type.id = ps_ge_question.question_type_id")
+                ->leftJoin("ps_ge_suggest_type", "ps_ge_question.question_type_id = ps_ge_suggest_type.id")
+                ->leftJoin("ps_admin", "ps_ge_question.principal_admin_id = ps_admin.id")
+                ->leftJoin("ps_ge_enterprise", "ps_ge_enterprise.id = ps_ge_question.enterprise_id")
+                ->field("ps_ge_question.id,ps_ge_question.status question_status,ps_ge_question_flow.id fid,ps_ge_question.is_complete_appraise,ps_ge_question_flow.status,ps_ge_question.question,ps_ge_question.code,
+                CASE
+                WHEN ps_ge_question.type = '1' THEN ps_ge_question_type.name
+                WHEN ps_ge_question.type = '2' THEN ps_ge_suggest_type.name 
+                END question_type_name,ps_ge_question.type,
+                ps_admin.real_name,ps_admin.login_name mobile,ps_admin.avatar_url,ps_admin.dd_userid,ps_ge_question.create_time,
+                ps_ge_enterprise.name enterprise_name,ps_ge_question.handle_light,ps_ge_question.feedback_light")
+                ->where($where)
+                ->limit(($page - 1) * $pageSize, (int)$pageSize)
+                ->order(['ps_ge_question_flow.update_time' => 'desc', 'ps_ge_question_flow.status' => 'desc'])
+                ->select()
+                ->toArray();
+
+            $ids          = array_column($pageList, 'id');
+            $questionList = Db::table("ps_ge_question_flow")
+                ->leftJoin("ps_admin", "ps_ge_question_flow.admin_id = ps_admin.id")
+                ->leftJoin("ps_dept", "ps_dept.id = ps_ge_question_flow.dept_id")
+                ->field("ps_ge_question_flow.id,ps_ge_question_flow.question_id,ps_admin.real_name,ps_admin.dd_userid,
+                ps_ge_question_flow.status,ps_admin.avatar_url,ps_admin.login_name,ps_dept.name dept_name,ps_ge_question_flow.create_time")
+                ->where([['ps_ge_question_flow.question_id', 'in', $ids], ['ps_ge_question_flow.delete_time', '=', 0]])
+                ->select()
+                ->toArray();
+            // 设置办结灯
+            foreach ($pageList as $index => $item) {
+                $pageList[$index]['finish_light'] = 3;
+                if ($item['question_status'] == 40) {
+                    $pageList[$index]['finish_light'] = 2;
+                    if ($item['is_complete_appraise'] == 1) {
+                        $pageList[$index]['finish_light'] = 1;
+                    }
+                }
+            }
+            // 添加企业包联干部的信息
+            $pageList = $this->_dealQuestionListData($pageList, $questionList);
+            return $this->success("", $data = [
+                'count'            => $count,
+                'page'             => $page,
+                'pageSize'         => $pageSize,
+                'currentPageTotal' => count($pageList),
+                'data'             => $pageList]);
+        } else {
+            return $this->error("访问错误");
+        }
+    }
+public function getTodoQuestionList()
+    {
+        if ($this->request->isPost()) {
+            $data     = $this->request->param();
+            $page     = $data['page'];
+            $pageSize = $data['pageSize'];
+            $admin    = $this->getCurrentUserId();
+            $where    = [
+                ["ps_ge_question_flow.admin_id", "=", $admin],
+                ['ps_ge_question_flow.delete_time', '=', 0],
+                ['ps_ge_question_flow.status', 'in', self::TODO_STATUS_ARRAY],
+                ['ps_ge_question.type', '=', 1],
+            ];
+            $count    = Db::table("ps_ge_question_flow")
+                ->leftJoin("ps_ge_question", "ps_ge_question_flow.question_id = ps_ge_question.id")
+                ->where($where)
+                ->count();
+            $pageList = Db::table("ps_ge_question_flow")
+                ->leftJoin("ps_ge_question", "ps_ge_question_flow.question_id = ps_ge_question.id")
+                ->leftJoin("ps_ge_question_type", "ps_ge_question_type.id = ps_ge_question.question_type_id")
+                ->leftJoin("ps_ge_suggest_type", "ps_ge_question.question_type_id = ps_ge_suggest_type.id")
+                ->leftJoin("ps_admin", "ps_ge_question.principal_admin_id = ps_admin.id")
+                ->leftJoin("ps_ge_enterprise", "ps_ge_enterprise.id = ps_ge_question.enterprise_id")
+                ->field("ps_ge_question.id,ps_ge_question_flow.id fid,ps_ge_question.question,ps_ge_question.is_complete_appraise,
+                CASE
+                WHEN ps_ge_question.type = '1' THEN ps_ge_question_type.name
+                WHEN ps_ge_question.type = '2' THEN ps_ge_suggest_type.name 
+                END question_type_name,
+                ps_ge_question.code,ps_ge_question.type,
+                ps_admin.real_name,ps_admin.login_name mobile,ps_admin.avatar_url,ps_admin.dd_userid,ps_ge_question.create_time,ps_ge_question.handle_light,ps_ge_question.feedback_light,ps_ge_question.status question_status,
+                ps_ge_enterprise.name enterprise_name")
+                ->where($where)
+                ->limit(($page - 1) * $pageSize, (int)$pageSize)
+                ->order(['ps_ge_question_flow.update_time' => 'desc', 'ps_ge_question_flow.status' => 'desc'])
+                ->select()
+                ->toArray();
+
+            $ids          = array_column($pageList, 'id');
+            $questionList = Db::table("ps_ge_question_flow")
+                ->leftJoin("ps_admin", "ps_ge_question_flow.admin_id = ps_admin.id")
+                ->leftJoin("ps_dept", "ps_dept.id = ps_ge_question_flow.dept_id")
+                ->field("ps_ge_question_flow.id,ps_ge_question_flow.question_id,ps_admin.real_name,ps_admin.dd_userid,
+                ps_ge_question_flow.status,ps_admin.avatar_url,ps_admin.login_name,ps_dept.name dept_name,ps_ge_question_flow.create_time")
+                ->where([['ps_ge_question_flow.question_id', 'in', $ids], ['ps_ge_question_flow.delete_time', '=', 0]])
+                ->select()
+                ->toArray();
+            // 设置办结灯
+            foreach ($pageList as $index => $item) {
+                $pageList[$index]['finish_light'] = 3;
+                if ($item['question_status'] == 40) {
+                    $pageList[$index]['finish_light'] = 2;
+                    if ($item['is_complete_appraise'] == 1) {
+                        $pageList[$index]['finish_light'] = 1;
+                    }
+                }
+            }
+            // 添加企业包联干部的信息
+            $pageList = $this->_dealQuestionListData($pageList, $questionList);
+
+            return $this->success("", $data = [
+                'count'            => $count,
+                'page'             => $page,
+                'pageSize'         => $pageSize,
+                'currentPageTotal' => count($pageList),
+                'data'             => $pageList]);
+        } else {
+            return $this->error("访问错误");
+        }
+    }

@@ -206,4 +206,13 @@ for($i=1;$i<=$personal_num;$i++){
 }
 // shuffle($randMoney);
 var_dump($randMoney);
+class test{
+    /**
+     *
+     */
+    public function aaa(){
+
+    }
+}
+
 ?>

@@ -3,174 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c15fdbe1-d10b-4c58-b90b-8e7132c64a01" name="默认的" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bootstrap.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/ImageComparison.php" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/ImageComparison.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/Upload.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/Upload.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/VoiceSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/VoiceSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/base64Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/base64Image.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/base64Image1.php" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/base64Image1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/base64ImageAjax.php" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/base64ImageAjax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/fileupload.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/fileupload.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/imagecls.php" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/imagecls.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/assets/css/basic.css" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/assets/css/basic.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/assets/css/jquery.Jcrop.css" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/assets/css/jquery.Jcrop.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/assets/image/Jcrop.gif" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/assets/image/Jcrop.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/assets/image/btn.png" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/assets/image/btn.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/assets/image/mask.png" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/assets/image/mask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/assets/image/noimage.png" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/assets/image/noimage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/assets/image/quit.png" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/assets/image/quit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/assets/js/ajaxfileupload.js" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/assets/js/ajaxfileupload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/assets/js/basic.js" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/assets/js/basic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/assets/js/jquery.Jcrop.js" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/assets/js/jquery.Jcrop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/assets/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/assets/js/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/crop.php" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/crop.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/lib/Image/Driver/GIF.php" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/lib/Image/Driver/GIF.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/lib/Image/Driver/Gd.php" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/lib/Image/Driver/Gd.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/lib/Image/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/lib/Image/Image.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/lib/UploadImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/lib/UploadImage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/upload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/uploads/20180326092042.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/uploads/20180326092042.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/uploads/20180326092053.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/uploads/20180326092053.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/uploads/20180326094819.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/uploads/20180326094819.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/uploads/20180326094856.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/uploads/20180326094856.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/jcrop_Sample/uploads/crop_20180326094856.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/jcrop_Sample/uploads/crop_20180326094856.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/picmatch_Sample/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/picmatch_Sample/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/picmatch_Sample/images/122874784473029500.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/picmatch_Sample/images/122874784473029500.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/picmatch_Sample/images/35052694492523446.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/picmatch_Sample/images/35052694492523446.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/picmatch_Sample/images/763599624611861205.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/picmatch_Sample/images/763599624611861205.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/picmatch_Sample/images/ren.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/picmatch_Sample/images/ren.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/picmatch_Sample/images/ren3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/picmatch_Sample/images/ren3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/picmatch_Sample/match.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/picmatch_Sample/match.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/picmatch_Sample/match.php" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/picmatch_Sample/match.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/picmatch_Sample/matchall.php" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/picmatch_Sample/matchall.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/picmatch_Sample/picmatch.php" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/picmatch_Sample/picmatch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/css/Jcrop.gif" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/css/Jcrop.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/css/cropper.css" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/css/cropper.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/css/jquery.Jcrop.css" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/css/jquery.Jcrop.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/css/jquery.Jcrop.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/css/jquery.Jcrop.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/114687437_200x200.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/114687437_200x200.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/114687437_48x48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/114687437_48x48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/123145633370309217.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/123145633370309217.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/181497248_200x200.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/181497248_200x200.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/181497248_48x48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/181497248_48x48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180329155307_2754.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180329155307_2754.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180329155446_7306.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180329155446_7306.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180329155518_1011.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180329155518_1011.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180329155551_5477.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180329155551_5477.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180329155617_6717.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180329155617_6717.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180329164819_6936.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180329164819_6936.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180329165201_7231.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180329165201_7231.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180412/1523524774.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180412/1523524774.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180412/1523525372.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180412/1523525372.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180412/1523525470.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180412/1523525470.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180413/1523583663.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180413/1523583663.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180413/1523583718.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180413/1523583718.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180413/1523583755.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180413/1523583755.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180413/1523583771.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180413/1523583771.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180413/1523583876.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180413/1523583876.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180413/1523583970.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180413/1523583970.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180413/1523584030.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180413/1523584030.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180413/1523584227.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180413/1523584227.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180413/1523584604.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180413/1523584604.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180413/1523584731.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180413/1523584731.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180413/1523584765.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180413/1523584765.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180413/1523584802.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180413/1523584802.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180413/1523585483.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180413/1523585483.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180413/1523585593.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180413/1523585593.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180413/1523597138.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180413/1523597138.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180413/1523597577.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180413/1523597577.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180413/1523598891.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180413/1523598891.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180416/1523864337.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180416/1523864337.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180417152200_200x200.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180417152200_200x200.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180417152200_48x48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180417152200_48x48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180417152208_200x200.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180417152208_200x200.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20180417152208_48x48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20180417152208_48x48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20190108/1546929652.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20190108/1546929652.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20190108/1546929757.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20190108/1546929757.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20190108/1546929770.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20190108/1546929770.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20190108/1546930034.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20190108/1546930034.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20190108/1546930084.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20190108/1546930084.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20190117152506_2650.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20190117152506_2650.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20190117153237_7876.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20190117153237_7876.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20190117153906_8108.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20190117153906_8108.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20190117153909_3351.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20190117153909_3351.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20190117153958_3936.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20190117153958_3936.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20190117154008_7908.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20190117154008_7908.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20190117154546_1384.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20190117154546_1384.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20190117154600_7942.png" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20190117154600_7942.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20190117154628_9347.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20190117154628_9347.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/20190117161740_6383.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/20190117161740_6383.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/213879373_200x200.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/213879373_200x200.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/213879373_48x48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/213879373_48x48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/231180805_200x200.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/231180805_200x200.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/231180805_48x48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/231180805_48x48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/278965047_200x200.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/278965047_200x200.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/278965047_48x48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/278965047_48x48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/300601905_200x200.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/300601905_200x200.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/300601905_48x48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/300601905_48x48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/377034827_200x200.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/377034827_200x200.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/377034827_48x48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/377034827_48x48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/423987499_200x200.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/423987499_200x200.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/423987499_48x48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/423987499_48x48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/429153941_200x200.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/429153941_200x200.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/429153941_48x48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/429153941_48x48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/458014644_200x200.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/458014644_200x200.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/458014644_48x48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/458014644_48x48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/484310754_200x200.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/484310754_200x200.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/484310754_48x48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/484310754_48x48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/698514103_200x200.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/698514103_200x200.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/698514103_48x48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/698514103_48x48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/808797423_200x200.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/808797423_200x200.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/808797423_48x48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/808797423_48x48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/823111305_200x200.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/823111305_200x200.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/823111305_48x48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/823111305_48x48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/892492978_200x200.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/892492978_200x200.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/892492978_48x48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/892492978_48x48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/991289990_200x200.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/991289990_200x200.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/991289990_48x48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/991289990_48x48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/arrow_left_b.png" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/arrow_left_b.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/cat1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/cat1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/cat2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/cat2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/jin17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/jin17.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/jing1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/jing1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/jing10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/jing10.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/jing11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/jing11.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/jing12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/jing12.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/jing13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/jing13.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/jing14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/jing14.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/jing15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/jing15.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/jing16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/jing16.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/jing18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/jing18.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/jing19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/jing19.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/jing2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/jing2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/jing3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/jing3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/jing4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/jing4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/jing5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/jing5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/jing6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/jing6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/jing7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/jing7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/jing8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/jing8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/jing9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/jing9.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/images/value_add.png" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/images/value_add.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/js/cropper.js" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/js/cropper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/js/jquery.Jcrop.js" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/js/jquery.Jcrop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/js/jquery.Jcrop.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/js/jquery.Jcrop.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/js/jquery.color.js" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/js/jquery.color.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/js/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/js/layer.js" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/js/layer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/js/lrz.js" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/js/lrz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/public/js/need/layer.css" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/public/js/need/layer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/test.png" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/test.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileUploads/upImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/imgFileUploads/upImage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php.php" beforeDir="false" afterPath="$PROJECT_DIR$/php.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudoku/www/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/sudoku/www/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudoku/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/sudoku/www/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudoku/www/unlock.html" beforeDir="false" afterPath="$PROJECT_DIR$/sudoku/www/unlock.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test111.php" beforeDir="false" afterPath="$PROJECT_DIR$/test111.php" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -178,35 +16,14 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/chart.js/composer.json</pharConfigPath>
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/贪食蛇/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="4" column="72" selection-start-line="4" selection-start-column="72" selection-end-line="4" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/贪食蛇/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1452">
-              <caret line="490" column="4" selection-start-line="490" selection-start-column="4" selection-end-line="490" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Less File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -316,6 +133,7 @@
     <option name="width" value="1920" />
     <option name="height" value="1040" />
   </component>
+  <component name="ProjectId" id="1pJoIl11EKqdxNO6LcfxRBLhe3q" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -341,6 +159,10 @@
       </pane>
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -348,8 +170,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="Less" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -364,18 +187,7 @@
       <recent name="D:\wampp\htdocs\test\queue" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -431,6 +243,13 @@
       <workItem from="1564365415717" duration="596000" />
       <workItem from="1565596333593" duration="148000" />
       <workItem from="1574304330098" duration="1988000" />
+      <workItem from="1614910477935" duration="1111000" />
+      <workItem from="1614926460103" duration="2143000" />
+      <workItem from="1615187300378" duration="1396000" />
+      <workItem from="1615250095205" duration="36000" />
+      <workItem from="1615345389085" duration="2995000" />
+      <workItem from="1615367531924" duration="599000" />
+      <workItem from="1616652456014" duration="2067000" />
     </task>
     <servers />
   </component>
@@ -468,15 +287,7 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="3" />
-    </breakpoint-manager>
+    <option name="version" value="3" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/queue/queue.php">
